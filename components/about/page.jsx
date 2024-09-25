@@ -1,20 +1,26 @@
+"use client";
+
 import React from "react";
 import Icon from "../global/navbar/Icon";
 import Title from "../global/Title";
+import {motion, useScroll, useTransform } from "framer-motion";
 
 
 function AboutUs() {
+
+  const {scrollYProgress} = useScroll();
+  const opacity = useTransform(scrollYProgress, [0.3, 0.4], [1, 0]);
+  const x = useTransform(scrollYProgress, [0.3, 0.4], [1, 1000]);
   return (
-    
-    <div className="w-screen sm:h-screen h-auto relative">
+    <motion.div className={`w-screen sm:h-screen h-auto sticky top-0 opacity-100`} style={{opacity, x}}>
       <div className="w-full h-24 pr-8 flex justify-between">
         <Title title={"About Us"}/>
         <div className="py-4">
-          <Icon />
+          {/* <Icon /> */}
         </div>
       </div>
 
-      <div className="w-full h-[60%] sm:h-[90%]  py-0 sm:py-7 px-4">
+      <div className="w-full h-[60%] sm:h-[90%]  py-0 sm:py-7 px-4 shadow-xl">
         <div className="bg-primary w-full h-full rounded-[40px] flex justify-between sm:flex-row flex-col">
           <div className="w-full sm:w-[60%] h-full flex justify-between pb-32 items-start flex-col">
             <p
@@ -57,7 +63,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

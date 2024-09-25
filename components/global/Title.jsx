@@ -9,12 +9,11 @@ function Title({ title, smallPhrase }) {
   useEffect(() => {
     if (window.innerWidth <= 768) {
       setMobile(true);
-      console.log("ok");
     }
   }, []);
 
   return (
-    <div className=" flex justify-center items-center relative">
+    <div className="flex justify-center items-center relative">
       <svg
         width={`${mobile ? 250 : smallPhrase ? 350 : 487}`}
         height="220"

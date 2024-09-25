@@ -11,7 +11,7 @@ function Navbar() {
         <Image src={logo} alt='logo' width={100} height={100} objectFit='cover' />
     </div>
     <div className="sm:w-24 w-12 h-full flex justify-center items-center">
-    <Icon />
+    {/* <Icon /> */}
 </div>
 </div>
   )

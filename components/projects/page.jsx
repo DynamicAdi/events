@@ -1,13 +1,22 @@
+"use client";
+
 import React from "react";
-import Icon from "../global/navbar/Icon";
 import GlowBtn from "../global/GlowBtn";
 import Title from "../global/Title";
 import PRojectCard from "./Card";
 import GlowRadi from "../global/glow";
+import {motion, useScroll, useTransform } from "framer-motion";
+
+
 
 function Projects() {
+
+  const {scrollYProgress} = useScroll();
+  const opacity = useTransform(scrollYProgress, [0.45, 0.6], [1, 0]);
+  const x = useTransform(scrollYProgress, [0.45, 0.6], [1, -1000]);
+
   return (
-    <div className="w-screen sm:h-screen h-auto relative" id="projects">
+    <motion.div className="w-screen sm:h-screen h-auto sticky top-0" id="projects" style={{opacity, x}}>
       <div className="absolute -top-4 left-1/4">
         <GlowRadi stop_1={"#03fc4580"} stop_2={"#03fc4500"}/>
       </div>
@@ -17,7 +26,7 @@ function Projects() {
       <div className="w-full h-24 pr-8 flex justify-between">
         <Title title={"Past Projects"} />
         <div className="py-4">
-          <Icon />
+          {/* <Icon /> */}
         </div>
       </div>
 
@@ -36,7 +45,7 @@ function Projects() {
 
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

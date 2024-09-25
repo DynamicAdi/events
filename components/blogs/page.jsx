@@ -6,11 +6,11 @@ import GlowBtn from "../global/GlowBtn";
 
 function Blogs() {
   return (
-    <div className="w-screen sm:h-screen h-auto relative" id="blogs">
+    <div className="w-screen sm:h-screen h-auto " id="blogs">
       <div className="w-full h-24 pr-8 flex justify-between">
         <Title title={"Blogs"} smallPhrase={true} />
         <div className="py-4">
-          <Icon />
+          {/* <Icon /> */}
         </div>
       </div>
 

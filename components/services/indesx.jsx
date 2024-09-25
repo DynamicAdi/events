@@ -1,15 +1,20 @@
+"use client";
+
 import React from "react";
 import Title from "../global/Title";
-import Icon from "../global/navbar/Icon";
-import logo from "@/assets/logo.png";
+import {motion, useScroll, useTransform} from "framer-motion";
 
 function Sservices() {
+
+  const {scrollYProgress} = useScroll();
+  const opacity = useTransform(scrollYProgress, [0.7, 0.9], [1, 0]);
+  // const rotate  = useTransform(scrollYProgress, [0.7, 0.9], [0, 180]);
   return (
-    <div className="w-screen h-screen relative" id="services">
+    <motion.div className="w-screen h-screen sticky top-0" id="services" style={{opacity}}>
       <div className="w-full h-24 pr-8 flex justify-between">
         <Title title={"Services"} smallPhrase={true} />
         <div className="py-4">
-          <Icon />
+          {/* <Icon /> */}
         </div>
       </div>
 
@@ -149,7 +154,7 @@ function Sservices() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

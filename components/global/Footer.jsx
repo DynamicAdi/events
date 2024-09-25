@@ -5,7 +5,7 @@ import {FaFacebookF, FaInstagram, FaLinkedinIn} from "react-icons/fa6"
 
 function Footer() {
   return (
-    <div className='w-full sm:h-96 h-full p-6'>
+    <div className='w-full sm:h-96 h-full p-6 sticky top-0'>
         <div className="w-full h-full bg-gray-200 rounded-3xl flex justify-between items-start flex-col sm:flex-row">
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <div className="w-2/5 h-2/5">

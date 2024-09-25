@@ -8,17 +8,19 @@ import Navbar from "../global/navbar/Navbar";
 import GlowBtn from "../global/GlowBtn";
 import GlowRadi from "../global/glow";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform} from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import {Modern} from "@/components/Modern";
-// import { Object3D } from "three";
 import { OrbitControls } from "@react-three/drei";
+import { useScrollProgress } from "../global/useScroll";
 
 function Home() {
+  // const {} = useScrollProgress();
   const {scrollYProgress} = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 130]);
+  const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
   return (
-    <div className={`w-screen h-screen flex flex-col justify-between relative`}>
+    <motion.div className={`w-screen h-screen flex flex-col justify-between sticky top-2`} style={{opacity, scale}}>
       <Navbar />
       <div className="absolute right-8 top-5">
         <GlowRadi
@@ -66,11 +68,7 @@ function Home() {
                 viewport={{once: true}}
                 className="revel inline bg-gradient-to-br from-blue-700 to-indigo-300 text-transparent bg-clip-text"
               >
-                Magnifi<span
-                  style={{
-                    scale
-                  }}
-                >q</span>ue
+                Magnifique
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, x: 100 }}
@@ -109,7 +107,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
