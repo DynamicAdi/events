@@ -1,16 +1,16 @@
 "use client";
 
 import React from "react";
-import Icon from "../global/navbar/Icon";
 import Title from "../global/Title";
 import {motion, useScroll, useTransform } from "framer-motion";
 
 
-function AboutUs() {
+function AboutUs({data}) {
 
   const {scrollYProgress} = useScroll();
   const opacity = useTransform(scrollYProgress, [0.3, 0.4], [1, 0]);
   const x = useTransform(scrollYProgress, [0.3, 0.4], [1, 1000]);
+
   return (
     <motion.div className={`w-screen sm:h-screen h-auto sticky top-0 opacity-100`} style={{opacity, x}}>
       <div className="w-full h-24 pr-8 flex justify-between">
