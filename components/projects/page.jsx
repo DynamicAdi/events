@@ -30,7 +30,7 @@ function Projects({data}) {
         <div className="w-full h-5/6 p-4 sm:px-6 px-4 mt-16 flex flex-col sm:flex-row sm:justify-start sm:items-start gap-4">
         {
           data.map((item) => (
-          <Link href={`/${item.slug.current}/${item._type}`}>
+          <Link href={`/${item.slug.current}/${item._type}`} key={item.slug.current}>
             <PRojectCard key={item._id} title={item.title} image={item.image} png={item.pngimage[0]} description={item.minidesc} />
           </Link>
           ))

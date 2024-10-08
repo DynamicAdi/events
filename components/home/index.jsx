@@ -17,6 +17,7 @@ function HomePage() {
   return (
     <motion.div
     style={{opacity}}
+    id="home"
     className="w-screen h-screen sticky top-0">
         <Navbar />
         <div className="w-full h-full absolute inset-0 flex sm:flex-row flex-col-reverse justify-between">
@@ -81,8 +82,8 @@ function HomePage() {
               </motion.p> 
             </div>
         </div>
-        <div className="sm:h-full sm:w-2/3 w-full h-3/5  flex sm:justify-center justify-end sm:items-center items-end">
-            <div className="w-full h-[80%]">
+        <div className="sm:h-full sm:w-2/3 w-full h-3/5  flex sm:justify-center justify-start sm:items-center items-start">
+            <div className="w-full sm:h-[80%] h-[75%]">
             <Canvas>
               <OrbitControls enableZoom={true} enableDamping />
               {/* <Modern /> */}

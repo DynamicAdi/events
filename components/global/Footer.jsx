@@ -3,10 +3,36 @@ import logo from "@/assets/logo.png";
 import Image from 'next/image';
 import { getPost } from '@/lib/calls';
 import { urlFor } from '@/lib/image';
+import Link from 'next/link';
 
 async function Footer() {
     const posts = await getPost('connect');
-
+    const tab = [
+        {
+          name: "Home",
+          link: "/#home",
+        },
+        {
+          name: "About",
+          link: "/about",
+        },
+        {
+          name: "Contact",
+          link: "/contact-us",
+        },
+        {
+          name: "Services",
+          link: "/#services",
+        },
+        {
+          name: "Past Projects",
+          link: "/#projects",
+        },
+        {
+          name: "Blogs",
+          link: "/#blogs",
+        },
+      ]
   return (
     <div className='w-full sm:h-96 h-full p-6 sticky top-0'>
         <div className="w-full h-full bg-gray-200 rounded-3xl flex justify-between items-start flex-col sm:flex-row">
@@ -21,11 +47,12 @@ async function Footer() {
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <ul>
                 <h1 className='font-mon font-bold sm:text-4xl text-2xl mb-4 text-Secondary cursor-default'>Quick Links</h1>
-                <li className='font-pop w-fit text-xl mt-2 hover:text-primary hover:translate-x-5 cursor-pointer transition duration-200'>Home</li>
-                <li className='font-pop w-fit text-xl mt-2 hover:text-primary hover:translate-x-5 cursor-pointer transition duration-200'>About</li>
-                <li className='font-pop w-fit text-xl mt-2 hover:text-primary hover:translate-x-5 cursor-pointer transition duration-200'>Contact</li>
-                <li className='font-pop w-fit text-xl mt-2 hover:text-primary hover:translate-x-5 cursor-pointer transition duration-200'>Past Projects</li>
-                <li className='font-pop w-fit text-xl mt-2 hover:text-primary hover:translate-x-5 cursor-pointer transition duration-200'>Blogs</li>
+                {tab.map((item) => (
+
+            <Link href={item.link} key={item.link}>
+                <li className='font-pop w-fit text-xl mt-2 hover:text-primary hover:translate-x-5 cursor-pointer transition duration-200'>{item.name}</li>
+                </Link>
+                ))}
             </ul>
             </div>
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">

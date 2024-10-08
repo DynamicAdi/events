@@ -15,3 +15,8 @@ export const fullPageAbout = `*[ _type=="about"]{mainDescription, ourPartners}`
 export const contactInfo = `*[ _type=="about"]{contactInformation, socialMediaLinks}`
 
 export const pastProjects = `*[ _type=="mainpost"]`
+
+export const blogCard = `*[ _type=="post"]{title, mainImage, _updatedAt, slug, author-> {name}}`
+export const fullBlog = `*[ _type=="post"]{..., author-> {name}}`
+
+export const services = `*[ _type=="services"]`

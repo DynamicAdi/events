@@ -17,7 +17,6 @@ function PRojectCard({title, description, image, png}) {
       src={urlFor(png).url()}
       className="w-full h-full absolute -top-8 left-2 transition-opacity opacity-0 scale-110 group-hover:opacity-100 rounded-2xl"
       alt="project"
-      objectFit="cover"
       />
     </div>
 

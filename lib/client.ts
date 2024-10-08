@@ -19,9 +19,3 @@ export const client = createClient({
     useCdn: false,
     apiVersion: '2024-12-23' // you can change this in future versions.
 })
-
-const builder = imageUrlBuilder(client);
-
-export const urlFor = (source:any) => {
-    return  builder.image(source);
-}

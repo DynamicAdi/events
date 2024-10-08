@@ -42,6 +42,12 @@ export const postType = defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'minidesc',
+      type: 'string',
+      title: "Mini description",
+      validation: validate => validate.max(20).warning(`Its a short description, only 20 characters are supported`)
+    }),
+    defineField({
       name: 'body',
       type: 'blockContent',
     }),

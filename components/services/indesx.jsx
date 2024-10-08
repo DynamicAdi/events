@@ -3,12 +3,12 @@
 import React from "react";
 import Title from "../global/Title";
 import {motion, useScroll, useTransform} from "framer-motion";
+import { urlFor } from "@/lib/image";
 
-function Sservices() {
+function DesktopServices({data}) {
 
   const {scrollYProgress} = useScroll();
-  const opacity = useTransform(scrollYProgress, [0.7, 0.9], [1, 0]);
-  // const rotate  = useTransform(scrollYProgress, [0.7, 0.9], [0, 180]);
+  const opacity = useTransform(scrollYProgress, [0.7, 0.85], [1, 0]);
   return (
     <motion.div className="w-screen h-screen sticky top-0" id="services" style={{opacity}}>
       <div className="w-full h-24 pr-8 flex justify-between">
@@ -42,7 +42,7 @@ function Sservices() {
         />
 
         <image
-          href={"https://picsum.photos/1000"} // Dynamic image URL
+          href={urlFor(data[0].image).url()} // Dynamic image URL
           width="100%"
           height="100%"
           preserveAspectRatio="xMidYMid slice"
@@ -66,22 +66,10 @@ function Sservices() {
         </defs>
       </svg>
       <h2 className="absolute inset-8 left-24 flex items-end justify-start text-white text-3xl font-pop font-bold opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-95 transition-all duration-300 z-30">
-        Your Heading Here
+        {data[0].title}
       </h2>
     </div>
 
-        {/* <svg
-          width="500"
-          height="690"
-          viewBox="0 0 530 1000"
-          className=" pb-4justify-start items-start"
-          fill="#000"
-        >
-          <path
-            d="M0 168C0 140.386 22.3858 118 50 118H308.69C335.231 118 357.147 97.2625 358.613 70.7617L359.887 47.7382C361.353 21.2375 383.269 0.5 409.81 0.5H535.812C563.694 0.5 586.189 23.3041 585.808 51.1828L573.674 939.683C573.3 967.028 551.026 989 523.678 989H50C22.3857 989 0 966.614 0 939V168Z"
-            fill="#D9D9D9"
-          />
-        </svg> */}
 
         <div className="w-[70%] h-[100%] relative flex justify-start items-start flex-col gap-4 pr-4">
           <div className="h-[55%] w-full flex justify-start items-start">
@@ -158,4 +146,4 @@ function Sservices() {
   );
 }
 
-export default Sservices;
+export default DesktopServices;

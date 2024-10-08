@@ -15,8 +15,8 @@ function About({data}) {
       <h1 className="text-center text-5xl font-pop font-bold">
         <span className="text-primary">About</span> us
       </h1>
-      <div className="w-full h-5/6 mt-4 flex justify-between items-start px-8">
-        <div className="w-1/2 h-full mt-4">
+      <div className="w-full h-5/6 mt-4 flex justify-between items-start sm:px-8 px-2">
+        <div className="w-full sm:w-1/2 h-full mt-4">
           <p className="font-mon font-normal text-xl text-justify">
          {data[0].mainDescription}
           </p>
@@ -25,7 +25,7 @@ function About({data}) {
           
         {
           data[0].ourPartners.map((item) => (
-            <div className="w-28 h-3w-28 rounded-full" key={item._key}>
+            <div className="w-24 sm:w-28 h-3w-28 rounded-full" key={item._key}>
             <img src={urlFor(item.image).url()} alt="logo" className="h-full w-full rounded-full" />
           </div>
           ))
@@ -33,7 +33,7 @@ function About({data}) {
         </div>
         </div>
 
-        <div className="w-1/2 h-[90%] mt-4 p-6 relative">
+        <div className="w-1/2 h-[90%] mt-4 p-6 relative sm:block hidden">
             <img src="https://picsum.photos/500" className="w-80 absolute inset-0 left-4" alt="pic" />
             <img src="https://picsum.photos/700" className="w-80 absolute inset-52 z-10" alt="pic" />
             <img src="https://picsum.photos/800" className="w-80 absolute left-[26rem] top-0" alt="pic" />
