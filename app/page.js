@@ -1,13 +1,10 @@
 import dynamic from "next/dynamic";
-import Sservices from "@/components/services/indesx";
 
 import Icon from "@/components/global/navbar/Icon";
 import Loader from "@/components/global/loader/page";
-
-
 import { Suspense } from "react";
 
-const HomePage = dynamic(() => import("@/components/home/index"), {ssr: false, loading: () => <Loader />})
+const HomePage = dynamic(() => import("@/components/home/index"), {ssr: true, loading: () => <Loader />})
 const GetAbout = dynamic(() => import("@/components/about/api"), {ssr: true, loading: () => <Loader />})
 const GetProjects = dynamic(() => import("@/components/projects/api"), {ssr: true, loading: () => <Loader />})
 const BlogApi = dynamic(() => import("@/components/blogs/api"), {ssr: true, loading: () => <Loader />})
@@ -19,7 +16,7 @@ export default function Render() {
   <Suspense fallback={<Loader />}>
     <div className="relative">
     <Icon />
-    {/* <HomePage /> */}
+    <HomePage />
     <GetAbout />
     <GetProjects />
     <ServicesApi />
