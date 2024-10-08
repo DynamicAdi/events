@@ -13,6 +13,12 @@ export const mainPost = defineType({
             title: "Title"
         }),
         defineField({
+            name: "minidesc",
+            type: "string",
+            title: "Mini Description",
+            validation: Rule => Rule.max(140).warning(`Only 140 characters are allowed!`)
+        }),
+        defineField({
             name: "description",
             type: "blockContent",
             title: "Description"
@@ -41,6 +47,7 @@ export const mainPost = defineType({
                 hotspot: true,
                 format: 'png'  // this ensures the image is saved as a PNG file
             }}],
+            validation: Rule => Rule.required().min(2).max(6),
             title: "PNG Image",
             description: "set of png image which can be used to display.",
         }),
