@@ -83,7 +83,7 @@ export function Modern(props) {
         makeDefault={true}
         far={1000}
         near={0.1}
-        fov={22.895}
+        fov={28}
         position={[18.885, 6.176, -0.533]}
         rotation={[-1.674, 1.266, 1.679]}
       />

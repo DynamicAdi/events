@@ -11,12 +11,18 @@ DESIGNER - ADARSH PANDIT
 
 import { groq } from "next-sanity";
 import { client } from "./client" // initalizes the client
-import { about } from "./query";
+import { about, contactInfo, fullPageAbout } from "./query";
 
 export const getPost = async (action:string, slug?:string) => {
     let query:any;
     if (action === 'about') {
         query = about;
+    }
+    if (action === 'aboutpage') {
+        query = fullPageAbout;
+    }
+    if (action === 'connect') {
+        query = contactInfo;
     }
     const posts = await client.fetch(groq`${query}`)
     return posts;

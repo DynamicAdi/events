@@ -4,10 +4,7 @@ import AboutUs from './page.jsx';
 
 async function GetAbout() {
     const posts = await getPost("about");
-    console.log(posts);
-    
   return (
-    // <></>
     <AboutUs data={posts} />
   )
 }

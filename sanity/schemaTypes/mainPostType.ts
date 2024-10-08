@@ -3,7 +3,7 @@ import { defineField, defineType } from "sanity";
 
 export const mainPost = defineType({
     name: "mainpost",
-    title: "Main 3D Posts",
+    title: "Projects",
     type: "document",
     icon: DocumentTextIcon,
     fields: [
@@ -26,12 +26,6 @@ export const mainPost = defineType({
             }
         }),
         defineField({
-            name: "model",
-            type: "file",
-            title: "3D Model",
-            description: "Upload your 3D model file (.glb only!)"
-        }),
-        defineField({
             name: "image",
             type: "image",
             title: "Image",
@@ -42,12 +36,13 @@ export const mainPost = defineType({
         }),
         defineField({
             name: "pngimage",
-            type: "image",
+            type: "array",
+            of: [{type: 'image', options: {
+                hotspot: true,
+                format: 'png'  // this ensures the image is saved as a PNG file
+            }}],
             title: "PNG Image",
-            description: "A png image which can be used to display on effects",
-            options: {
-                hotspot: true
-            }
+            description: "set of png image which can be used to display.",
         }),
     ]
 })

@@ -37,10 +37,10 @@ body {
     }
   
     body::-webkit-scrollbar-thumb {
-      background: #0043c9;
+      background: orangered;
     }
   
     body::-webkit-scrollbar-thumb:hover {
-      background: #003190;
+      background: orangered;
     }
   }

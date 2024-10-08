@@ -3,7 +3,7 @@ import {GoArrowUpRight} from "react-icons/go";
 import logo from "@/assets/model.png";
 import Image from 'next/image';
 
-function PRojectCard() {
+function PRojectCard({title, description, png}) {
   return (
     <div className="cursor-pointer group w-72 h-5/6 relative hover:-translate-y-8 transition-all bg-[#F7F7F7] border border-solid border-gray-300 rounded-3xl flex flex-col justify-start items-start p-2">
     <div className="h-1/2 w-full relative">

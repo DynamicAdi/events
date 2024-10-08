@@ -22,10 +22,14 @@ export const  aboutType = defineType({
         defineField({
             name: 'miniDescription',
             type: 'string',
+            title: 'Mini Description',
+            description: 'Add short description for home page section.',
         }),
         defineField({
-            name: 'content',
-            type: 'blockContent',
+            name: 'mainDescription',
+            type: 'string',
+            title: 'Description',
+            description: 'Add a brief description of your about section.',
         }),
         defineField({
             name: 'socialMediaLinks',

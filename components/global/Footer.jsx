@@ -1,9 +1,12 @@
 import React from 'react'
 import logo from "@/assets/logo.png";
 import Image from 'next/image';
-import {FaFacebookF, FaInstagram, FaLinkedinIn} from "react-icons/fa6"
+import { getPost } from '@/lib/calls';
+import { urlFor } from '@/lib/image';
 
-function Footer() {
+async function Footer() {
+    const posts = await getPost('connect');
+
   return (
     <div className='w-full sm:h-96 h-full p-6 sticky top-0'>
         <div className="w-full h-full bg-gray-200 rounded-3xl flex justify-between items-start flex-col sm:flex-row">
@@ -28,14 +31,24 @@ function Footer() {
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <h1 className='font-mon font-bold sm:text-4xl text-2xl mb-4 text-Secondary cursor-default'>Connect with us</h1>
             <ul>
-                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>+91 9086345xxx</li>
-                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>zyl5q@example.com</li>
-                <li className='sm:text-xl text-base mt-2'>2465 Hempstead Turnpike, East Meadow NY 11554</li>
+                <a href={`tel:${posts[0].phone}`}>
+                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>{posts[0].contactInformation.phone}</li>
+                </a>
+                <a href={`mailto:${posts[0].email}`}>
+                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>{posts[0].contactInformation.email}</li>
+                </a>
+                {/* <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>zyl5q@example.com</li> */}
+                <li className='sm:text-xl text-base mt-2'>{posts[0].contactInformation.address}</li>
 
-                <ul className='flex justify-start items-center gap-4 mt-4'>
-                    <li className='cursor-pointer hover:bg-blue-600 hover:text-white transition-all bg-blue-600/20 p-3 rounded-full text-blue-600'><FaFacebookF  size={28}/></li>
-                    <li className='cursor-pointer hover:bg-pink-600 hover:text-white transition-all bg-pink-600/20 p-3 rounded-full text-pink-600'><FaInstagram  size={30}/></li>
-                    <li className='cursor-pointer hover:bg-blue-400 hover:text-white transition-all bg-blue-400/20 p-3 rounded-full text-blue-400'><FaLinkedinIn size={30} /></li>
+                <ul className='flex justify-start items-center gap-2 mt-2'>
+                    {posts[0].socialMediaLinks.map((items, index) => (
+                        <a href={items.link} target="_blank" rel="noopener noreferrer" key={index}>
+                            <li className='w-12 h-12 cursor-pointer hover:scale-110 hover:text-white transition-all rounded-full'><img alt={items.link} src={urlFor(items.icon).url()} className='w-full h-full rounded-full object-cover'/></li>
+                        </a>
+                    ))}
+                    
+                    {/* <li className='cursor-pointer hover:bg-pink-600 hover:text-white transition-all bg-pink-600/20 p-3 rounded-full text-pink-600'><FaInstagram  size={30}/></li> */}
+                    {/* <li className='cursor-pointer hover:bg-blue-400 hover:text-white transition-all bg-blue-400/20 p-3 rounded-full text-blue-400'><FaLinkedinIn size={30} /></li> */}
                 </ul>
             </ul>
             </div>

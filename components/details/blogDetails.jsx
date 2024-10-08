@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../global/navbar/Navbar";
 import Footer from "../global/Footer";
 import {RxDotFilled, RxCalendar, RxAvatar} from 'react-icons/rx'
-
+import RichText from "@/components/portable/page";
 
 function BlogDetails() {
 
@@ -23,7 +23,8 @@ function BlogDetails() {
       </div>
       <h1 className="font-semibold text-4xl font-mon">Title of the blog</h1>
 
-        <div className="w-full h-[50rem] bg-black"></div>
+        {/* <div className="w-full h-[50rem] bg-black"></div> */}
+        {/* <RichText blocks={}/> */}
         </div>
 
 
