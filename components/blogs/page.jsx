@@ -13,7 +13,7 @@ function Blogs({data}) {
       </div>
 
       <div className="w-full h-[85%] relative flex justify-start items-start sm:justify-end sm:items-end">
-        <div className="w-full h-5/6 p-4 px-4 sm:px-6 flex flex-col sm:flex-row justify-start items-start gap-4">
+        <div className="w-full h-5/6 p-4 px-4 sm:px-6 flex flex-col sm:flex-row justify-center items-center sm:justify-start sm:items-start gap-4">
         {
           data.map((item, index) => (
           <Link href={`/blog/${item.slug.current}`} key={index}>

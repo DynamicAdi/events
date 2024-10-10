@@ -1,20 +1,28 @@
-"use client"
+"use client";
 
-import React, {useEffect, useState} from 'react'
-import MobileServices from './page';
-import DesktopServices from "./indesx"
+import React, { useEffect, useState } from "react";
+import MobileServices from "./page";
+import DesktopServices from "./index"; // corrected typo
 
-function MiddleWare({rawData}) {
-    const [isPhone, setPhone] = useState(false);
+function MiddleWare({ rawData }) {
+  const [isPhone, setPhone] = useState(false);
 
-    useEffect(() => {
-        if (window.innerWidth < 700) {
-            setPhone(true);
-        }
-    }, [window.innerWidth])
-  return (
-    isPhone ? <MobileServices data={rawData} /> : <DesktopServices data={rawData} />
-)
+  // Function to check window width
+  const handleResize = () => {
+    if (window.innerWidth < 700) {
+      setPhone(true);
+    } else {
+      setPhone(false);
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isPhone ? <MobileServices data={rawData} /> : <DesktopServices data={rawData} />;
 }
 
-export default MiddleWare
+export default MiddleWare;

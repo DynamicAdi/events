@@ -82,9 +82,9 @@ function HomePage() {
               </motion.p> 
             </div>
         </div>
-        <div className="sm:h-full sm:w-2/3 w-full h-3/5  flex sm:justify-center justify-start sm:items-center items-start">
-            <div className="w-full sm:h-[80%] h-[75%]">
-            <Canvas>
+        <div className="sm:h-full sm:w-2/3 w-full h-3/5  flex justify-center  items-center">
+            <div className="w-full sm:h-[80%] h-[60%]">
+            <Canvas className="w-full h-full">
               <OrbitControls enableZoom={true} enableDamping />
               {/* <Modern /> */}
               <Model />

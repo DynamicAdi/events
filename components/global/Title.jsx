@@ -6,10 +6,23 @@ import { motion } from "framer-motion";
 function Title({ title, smallPhrase }) {
   const [mobile, setMobile] = useState(false);
 
-  useEffect(() => {
-    if (window.innerWidth <= 768) {
+  const handleResize = () => {
+    if (window.innerWidth < 700) {
       setMobile(true);
+    } else {
+      setMobile(false);
     }
+  };
+
+  useEffect(() => {
+    // Set the initial screen size
+    handleResize();
+
+    // Add event listener for resizing
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (

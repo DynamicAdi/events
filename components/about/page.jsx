@@ -8,22 +8,35 @@ import { urlFor } from "@/lib/image";
 
 
 function AboutUs({data}) {
-
-  let ratio = 0.5;
-  const {scrollYProgress} = useScroll();
+  let ratio = 0.43;
+  const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0.3, ratio], [1, 0]);
-  const [window, setWindow] = useState(false);
-  useEffect(() => {
-    if (window.innerWidth < 789) {
-      setWindow(true);
-      ratio = 0.22
-    }
-  }, [window, setWindow])
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  const description = data.map((data) => data.miniDescription)
-  // const image = data.map((data) => data.image)
+  const handleResize = () => {
+    if (window.innerWidth < 700) {
+      setIsSmallScreen(true);
+      ratio = 0.22;
+    } else {
+      setIsSmallScreen(false);
+    }
+  };
+
+  useEffect(() => {
+    // Set the initial screen size
+    handleResize();
+
+    // Add event listener for resizing
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const description = data.map((data) => data.miniDescription);
+
   return (
-    <motion.div className={`w-screen sm:h-screen h-auto ${window ? 'relative' : 'sticky top-0'} opacity-100`} style={{opacity}}>
+    <motion.div className={`w-screen sm:h-screen h-auto ${isSmallScreen ? 'relative' : 'sticky top-0'} opacity-100`} style={{opacity}}>
       <div className="w-full h-24 pr-8 flex justify-between">
         <Title title={"About Us"}/>
         <div className="py-4">
