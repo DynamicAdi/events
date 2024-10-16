@@ -7,8 +7,8 @@ import { motion, useScroll, useTransform} from "framer-motion";
 import GlowBtn from "../global/GlowBtn";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { Model } from "../Building";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { Model } from "../../public/Model";
 
 
 function HomePage() {
@@ -85,8 +85,15 @@ function HomePage() {
         <div className="sm:h-full sm:w-2/3 w-full h-3/5  flex justify-center  items-center">
             <div className="w-full sm:h-[80%] h-[60%]">
             <Canvas className="w-full h-full">
+            <PerspectiveCamera
+        makeDefault={true}
+        far={1000}
+        near={0.1}
+        fov={28}
+        position={[18.885, 6.176, -0.533]}
+        rotation={[-1.674, 1.266, 1.679]}
+      />
               <OrbitControls enableZoom={true} enableDamping />
-              {/* <Modern /> */}
               <Model />
             </Canvas>
             </div>
