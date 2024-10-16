@@ -4,6 +4,14 @@ import Navbar from "@/components/global/navbar/Navbar";
 import React from "react";
 import Footer from "@/components/global/Footer";
 import { urlFor } from "@/lib/image";
+import image1 from "@/assets/about.jpg";
+import image2 from "@/assets/about2.jpg";
+import image3 from "@/assets/about3.jpg";
+import image4 from "@/assets/about4.jpg";
+import image5 from "@/assets/about5.jpg";
+import image6 from "@/assets/about6.jpg";
+import Icon from "@/components/global/navbar/Icon";
+
 
 
 
@@ -12,9 +20,11 @@ function About({data}) {
     <>
     <div className="w-screen h-auto mb-4">
       <Navbar />
+      <Icon />
       <h1 className="text-center text-5xl font-pop font-bold">
         <span className="text-primary">About</span> us
       </h1>
+      <div className="sm:hidden block w-screen h-64 mt-4"><img src={image1.src} className="w-full h-full object-cover" /></div>
       <div className="w-full h-5/6 mt-4 flex justify-between items-start sm:px-8 px-2">
         <div className="w-full sm:w-1/2 h-full mt-4">
           <p className="font-mon font-normal text-xl text-justify">
@@ -34,12 +44,12 @@ function About({data}) {
         </div>
 
         <div className="w-1/2 h-[90%] mt-4 p-6 relative sm:block hidden">
-            <img src="https://picsum.photos/500" className="w-80 absolute inset-0 left-4" alt="pic" />
-            <img src="https://picsum.photos/700" className="w-80 absolute inset-52 z-10" alt="pic" />
-            <img src="https://picsum.photos/800" className="w-80 absolute left-[26rem] top-0" alt="pic" />
-            <img src="https://picsum.photos/900" className="w-72 absolute inset-96 left-[26rem]" alt="pic" />
-            <img src="https://picsum.photos/1000" className="w-72 absolute inset-96 left-[1rem]" alt="pic" />
-            <img src="https://picsum.photos/800" className="w-80 absolute inset-0 left-4 -bottom-24" alt="pic" />
+            <img src={image1.src} className="w-80 absolute inset-0 left-4" alt="pic" />
+            <img src={image2.src} className="w-80 absolute inset-52 z-10" alt="pic" />
+            <img src={image3.src} className="w-80 absolute left-[26rem] top-0" alt="pic" />
+            <img src={image4.src} className="w-72 absolute inset-96 left-[26rem]" alt="pic" />
+            <img src={image5.src} className="w-72 absolute inset-96 left-[1rem]" alt="pic" />
+            <img src={image6.src} className="w-80 absolute inset-0 left-4 -bottom-24" alt="pic" />
         </div>
       </div>
     </div>

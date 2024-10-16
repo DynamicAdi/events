@@ -24,21 +24,6 @@ function HomePage() {
         {/* <h1 className="absolute top-1/4 left-2 text-3xl">Random number</h1> */}
         <div className="sm:h-full sm:w-2/5 h-2/5 w-full flex justify-end items-end">
             <div className="sm:w-full sm:h-[45%] flex flex-col justify-start items-start px-4">
-            <motion.div
-                initial={{
-                  scale: 0,
-                }}
-                whileInView={{
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.5,
-                }}
-                viewport={{ once: true }}
-              >
-                <GlowBtn string={"Get Started"} Icon={FaArrowRightLong} />
-              </motion.div>
 
               <h1 className="sm:text-6xl gap-0 text-3xl font-bold sm:text-left text-center w-full">
                 <motion.span
@@ -61,6 +46,7 @@ function HomePage() {
                   events
                 </motion.span>
               </h1>
+                  {/* <h1 className="sm:text-3xl font-semibold font-pop text-left">Magnifique events - your event travel and brand partner<br /></h1> */}
               <motion.p
                 initial={{
                   opacity: 0,
@@ -75,10 +61,9 @@ function HomePage() {
                   delay: 0.6,
                 }}
                 viewport={{ once: true }}
-                className="sm:text-lg text-base w-full mt-4 sm:mt-4 font-mon text-justify"
+                className="text-xl w-full mt-4 font-mon text-justify"
               >
                 Magnifique Events is your trusted partner for unforgettable event experiences. From seamless travel arrangements to impactful brand collaborations, we specialize in creating memorable moments that elevate your events and leave a lasting impression. Let us make your next event truly magnificent!
-               {/* Magnifique events - Your event travel and brand partner */}
               </motion.p> 
             </div>
         </div>

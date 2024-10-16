@@ -9,7 +9,7 @@ function MobileServices({data}) {
   const {scrollYProgress} = useScroll();
   const opacity = useTransform(scrollYProgress, [0.7, 0.85], [1, 0]);
   return (
-    <div className="w-full h-auto" style={{opacity}}>
+    <div className="w-full h-auto" style={{opacity}} id="services">
       <div className="w-full h-24 pr-8 flex justify-between">
         <Title title={"Services"} />
       </div>

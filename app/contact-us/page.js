@@ -1,12 +1,12 @@
 import React from 'react';
-import Details from '@/components/details/page';
-import BlogDetails from '@/components/details/blogDetails';
 import Contact from '@/components/contact/page';
+import Footer from "@/components/global/Footer"
 
 export default function ContactUs() {
   return (
     <>
     <Contact />
+    <Footer />
     </>
   );
 }

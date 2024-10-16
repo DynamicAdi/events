@@ -10,7 +10,7 @@ async function Footer() {
     const tab = [
         {
           name: "Home",
-          link: "/#home",
+          link: "/",
         },
         {
           name: "About",
@@ -19,10 +19,6 @@ async function Footer() {
         {
           name: "Contact",
           link: "/contact-us",
-        },
-        {
-          name: "Services",
-          link: "/#services",
         },
         {
           name: "Past Projects",
@@ -41,7 +37,7 @@ async function Footer() {
                 <Image src={logo} className='drop-shadow-xl' alt='logo' objectFit='cover' />
             </div>
             <div className="content">
-                <p className='font-mon font-medium mt-4 text-xs'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi facere excepturi nisi facilis pariatur beatae! Animi tempore ducimus velit non cumque. Quam quidem odit, cum vitae corporis quod distinctio.</p>
+                <p className='font-mon font-medium mt-2 text-sm'>Magnifique Events is your trusted partner for unforgettable event experiences. From seamless travel arrangements to impactful brand collaborations, we specialize in creating memorable moments that elevate your events and leave a lasting impression. Let us make your next event truly magnificent!</p>
             </div>
             </div>
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">

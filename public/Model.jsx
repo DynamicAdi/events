@@ -6,19 +6,18 @@ Command: npx gltfjsx@6.5.2 model.glb
 import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
-import {motion} from "framer-motion-3d"
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/model.glb')
   const groupRef = useRef();
+  const { nodes, materials } = useGLTF('/model.glb')
   const [animate, setAnimate] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setAnimate(true);
-    }, 6000);
+    }, 4000);
     setTimeout(() => {
       setAnimate(false);
-    }, 16500);
+    }, 16000);
     
   }, [])
   useFrame(() => {
@@ -31,27 +30,10 @@ export function Model(props) {
   });
   return (
     <group {...props} dispose={null}>
-      <group position={[0.859, 0.884, 0.498]} rotation={[-0.041, 0.777, -3.113]} scale={0.045}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[-0.879, -0.627, 0]} scale={0.115}>
-            <mesh geometry={nodes.Object_0.geometry} material={materials['Material.008']} />
-            <mesh geometry={nodes.Object_0_1.geometry} material={materials['Material.009']} />
-          </group>
-        </group>
-      </group>
-      
-      <pointLight
-        intensity={20}
-        decay={2}
-        position={[5.223, 0.635, -3.44]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      />
-      <pointLight
-        intensity={20}
-        decay={2}
-        position={[5.223, 0.635, -5.453]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      />
+      <pointLight intensity={10} decay={2} position={[0.859, 1.771, 7.126]} rotation={[-Math.PI / 2, 0, 0]} />
+      <pointLight intensity={10} decay={2} position={[-1.631, 1.771, 7.126]} rotation={[-Math.PI / 2, 0, 0]} />
+      <pointLight intensity={10} decay={2} position={[-4.592, 1.771, 7.126]} rotation={[-Math.PI / 2, 0, 0]} />
+      <pointLight intensity={10} decay={2} position={[-5.209, 1.771, 4.331]} rotation={[-Math.PI / 2, 0, 0]} />
       <pointLight intensity={10} decay={2} position={[-5.436, 1.771, 0.687]} rotation={[-Math.PI / 2, 0, -0.235]} />
       <pointLight intensity={10} decay={2} position={[-5.385, 1.771, -2.175]} rotation={[-Math.PI / 2, 0, -0.235]} />
       <pointLight intensity={10} decay={2} position={[-5.436, 1.771, -3.987]} rotation={[-Math.PI / 2, 0, -0.235]} />
@@ -66,18 +48,8 @@ export function Model(props) {
       <pointLight intensity={10} decay={2} position={[3.108, 2.229, -6.114]} rotation={[-Math.PI / 2, 0, 0]} />
       <pointLight intensity={10} decay={2} position={[2.953, 1.974, -2.561]} rotation={[-Math.PI / 2, 0, 0]} />
       <pointLight intensity={10} decay={2} position={[2.953, 1.974, 3.053]} rotation={[-Math.PI / 2, 0, 0]} />
-     <motion.group
-     initial={{
-      scale: 0,
-      opacity: 0,
-     }}
-     animate={{
-      scale: 1,
-      opacity: 1,
-      transition: {delay: 2, duration: 1.5, ease: [0.4, 0, 0.6, 1] },
-     }}
-     ref={groupRef}>
-
+ 
+    <group ref={groupRef}>
       <mesh geometry={nodes.Cube001.geometry} material={materials.glow} />
       <mesh geometry={nodes.Cube002.geometry} material={nodes.Cube002.material} />
       <mesh geometry={nodes.Cylinder.geometry} material={materials.darkblue} />
@@ -172,7 +144,7 @@ export function Model(props) {
       <mesh geometry={nodes.Wolf3D_Body003_5.geometry} material={materials['Wolf3D_Outfit_Bottom.009']} />
       <mesh geometry={nodes.Wolf3D_Body003_6.geometry} material={materials['Wolf3D_Outfit_Footwear.009']} />
       <mesh geometry={nodes.Wolf3D_Body003_7.geometry} material={materials['Wolf3D_Outfit_Top.009']} />
-    </motion.group>
+    </group>
   </group>
   )
 }
