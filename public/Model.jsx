@@ -6,6 +6,7 @@ Command: npx gltfjsx@6.5.2 model.glb
 import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
+import {motion} from "framer-motion-3d"
 
 export function Model(props) {
   const { nodes, materials } = useGLTF('/model.glb')
@@ -65,7 +66,17 @@ export function Model(props) {
       <pointLight intensity={10} decay={2} position={[3.108, 2.229, -6.114]} rotation={[-Math.PI / 2, 0, 0]} />
       <pointLight intensity={10} decay={2} position={[2.953, 1.974, -2.561]} rotation={[-Math.PI / 2, 0, 0]} />
       <pointLight intensity={10} decay={2} position={[2.953, 1.974, 3.053]} rotation={[-Math.PI / 2, 0, 0]} />
-     <group ref={groupRef}>
+     <motion.group
+     initial={{
+      scale: 0,
+      opacity: 0,
+     }}
+     animate={{
+      scale: 1,
+      opacity: 1,
+      transition: {delay: 2, duration: 1.5, ease: [0.4, 0, 0.6, 1] },
+     }}
+     ref={groupRef}>
 
       <mesh geometry={nodes.Cube001.geometry} material={materials.glow} />
       <mesh geometry={nodes.Cube002.geometry} material={nodes.Cube002.material} />
@@ -161,7 +172,7 @@ export function Model(props) {
       <mesh geometry={nodes.Wolf3D_Body003_5.geometry} material={materials['Wolf3D_Outfit_Bottom.009']} />
       <mesh geometry={nodes.Wolf3D_Body003_6.geometry} material={materials['Wolf3D_Outfit_Footwear.009']} />
       <mesh geometry={nodes.Wolf3D_Body003_7.geometry} material={materials['Wolf3D_Outfit_Top.009']} />
-    </group>
+    </motion.group>
   </group>
   )
 }
