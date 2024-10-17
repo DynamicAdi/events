@@ -18,8 +18,8 @@ export default async function handler(req, res) {
 
     // Set up email data
     const mailOptions = {
-      from: process.env.EMAIL, // sender's email
-      to: email, // your receiving email
+      from: process.env.EMAIL,
+      to: process.env.RECIVING_MAIL,
       subject: `A new query from website!`,
       text: `A new email from Website!\n\nSender email: ${email}\n\nName: ${name}\n\nphone: ${phone}\n\nMessage: ${message}`,
     };
