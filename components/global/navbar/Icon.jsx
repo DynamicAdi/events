@@ -72,7 +72,7 @@ function Icon() {
     <div onClick={toggle} className="fixed top-4 right-6 z-30 w-10 h-10 sm:w-12 sm:h-12 bg-gray-500 rounded-full flex justify-center items-center cursor-pointer">
       <FaGripLines className="cursor-pointer text-white rotate-180" size={28} />
     </div>
-    <div className={`fixed right-0 z-50 w-5/6 sm:w-[25%] h-screen top-0 bg-gray-200 ${open ? "translate-x-0 opacity-100 z-10" : "translate-x-96 opacity-0 -z-10"} transition-all`}>
+    <div className={`fixed right-0 z-50 w-5/6 sm:w-[25%] h-screen top-0 bg-gray-200/60 backdrop-blur-sm ${open ? "translate-x-0 opacity-100 z-10" : "translate-x-96 opacity-0 -z-10"} transition-all`}>
       
       <div className="w-full h-20 flex justify-end items-end flex-col gap-4 p-2 px-8">
         <div onClick={toggle} className="w-12 h-12 rounded-full flex cursor-pointer justify-center items-center bg-gray-700">
@@ -93,7 +93,7 @@ tab.map((item, index) => (
           initial="hidden"
           whileInView={"show"}
           variants={items}
-          className="text-4xl hover:text-primary hover:scale-105 hover:font-regular font-light transition-all cursor-pointer mt-5">{item.name}</motion.li>
+          className="text-3xl hover:text-primary hover:scale-105 hover:font-regular font-normal transition-all cursor-pointer mt-5">{item.name}</motion.li>
         </Link>
 ))
 }

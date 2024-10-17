@@ -27,7 +27,7 @@ function About({data}) {
       <div className="sm:hidden block w-screen h-64 mt-4"><img src={image1.src} className="w-full h-full object-cover" /></div>
       <div className="w-full h-5/6 mt-4 flex justify-between items-start sm:px-8 px-2">
         <div className="w-full sm:w-1/2 h-full mt-4">
-          <p className="font-mon font-normal text-xl text-justify">
+          <p className="font-pop font-normal text-lg text-justify w-[95%]">
          {data[0].mainDescription}
           </p>
 
