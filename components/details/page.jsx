@@ -34,9 +34,6 @@ function Details({data, more}) {
             <h1 className="bg-gradient-to-br from-gray-900 to-gray-400 ml-4 inline-block text-transparent bg-clip-text text-5xl font-bold font-pop">
               {data[0].title}
             </h1>
-            <div className="scale-75">
-              <GlowBtn string={"customize"} />
-            </div>
           </div>
         <RichText blocks={data[0].description} />
         </div>

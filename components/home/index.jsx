@@ -2,13 +2,12 @@
 
 import React from "react";
 import Navbar from "../global/navbar/Navbar";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { motion, useScroll, useTransform} from "framer-motion";
 import GlowBtn from "../global/GlowBtn";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import { Model } from "../../public/Model";
+import { Model } from "../../public/NewModel";
 
 
 function HomePage() {
@@ -71,14 +70,16 @@ function HomePage() {
             <div className="w-full sm:h-[80%] h-[60%]">
             <Canvas className="w-full h-full">
             <PerspectiveCamera
-        makeDefault={true}
+        makeDefault={false}
         far={1000}
         near={0.1}
         fov={28}
         position={[18.885, 6.176, -0.533]}
         rotation={[-1.674, 1.266, 1.679]}
       />
-              <OrbitControls enableZoom={true} enableDamping />
+              <OrbitControls enableZoom={true} enableDamping
+               target={[0, 1, 0]}
+              />
               <Model />
             </Canvas>
             </div>

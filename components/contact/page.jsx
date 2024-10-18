@@ -1,19 +1,21 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../global/navbar/Navbar";
 import {
   IoCallOutline,
   IoChatbubblesOutline,
   IoLocationOutline,
 } from "react-icons/io5";
+import { getPost } from "@/lib/calls";
 
-function Contact() {
+async function Contact() {
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
     phone: '',
     message: '',
-})
+  })
+  const posts = await getPost('connect');
   const handleSend = async (e) => {
     e.preventDefault();
 
@@ -40,8 +42,11 @@ function Contact() {
     setFormData({...formData, [e.target.name]: e.target.value });
   }
   return (
-    <div className="w-full sm:h-screen h-auto flex justify-between bg-gray-100 pb-10 items-center flex-col">
+    <div className="w-full sm:h-screen h-auto flex justify-between bg-gray-100 pb-10 items-center flex-col relative">
       <Navbar />
+    <div className="relative z-20">
+      {/* <Icon /> */}
+    </div>
       <div className="sm:w-3/4 sm:h-5/6 h-auto w-[95%] bg-white shadow-xl rounded-3xl border-2 border-primary border-solid sm:p-4 py-4 px-0">
         <div className="w-full h-full flex justify-between items-center flex-col-reverse sm:flex-row">
           <div className="sm:w-2/6 w-full h-full p-2 flex flex-col gap-2">
@@ -55,10 +60,10 @@ function Contact() {
                   our friendly team is there to help
                 </p>
                 <a
-                  href="mailto:"
+                  href={`mailto:${posts[0].contactInformation.email}`}
                   className="font-mon font-light text-base text-blue-800"
                 >
-                  xyz@gmail.com
+                  {posts[0].contactInformation.email}
                 </a>
               </div>
             </div>
@@ -71,12 +76,9 @@ function Contact() {
                 <p className="font-light text-[12px] text-gray-400">
                   Come and say hello to us
                 </p>
-                <a
-                  href="mailto:"
-                  className="font-mon font-light text-base text-black"
-                >
-                  nukar wali gali, pan wali dukan ke pass, jammu
-                </a>
+                <p className="font-mon font-light text-base text-black">
+                {posts[0].contactInformation.address}
+                </p>
               </div>
             </div>
             <div className="w-full h-1/4 p-3 rounded-2xl flex gap-2">
@@ -89,10 +91,10 @@ function Contact() {
                   Mon-Fri from 8am - 5pm
                 </p>
                 <a
-                  href="tel:"
+                  href={`tel:${posts[0].contactInformation.phone}`}
                   className="font-mon font-light text-base text-blue-800"
                 >
-                  +91 908634xxxx
+                  {posts[0].contactInformation.phone}
                 </a>
               </div>
             </div>
@@ -108,7 +110,7 @@ function Contact() {
                 name="name"
                 onChange={(e) => handleChange(e)}
                 required
-                placeholder="Dev Adarsh pandit"
+                placeholder="jhon smith"
                 className="bg-transparent outline-none pb-1 placeholder:text-white/40 placeholder:font-light placeholder:font-mon p-2 border-b-2 border-solid border-white"
                 type="text"
               />

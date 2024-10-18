@@ -15,7 +15,7 @@ function Icon() {
   const tab = [
     {
       name: "Home",
-      link: "/#home",
+      link: "/",
     },
     {
       name: "About",
@@ -69,7 +69,7 @@ function Icon() {
 
   return (
     <>
-    <div onClick={toggle} className="fixed top-4 right-6 z-30 w-10 h-10 sm:w-12 sm:h-12 bg-gray-500 rounded-full flex justify-center items-center cursor-pointer">
+    <div onClick={toggle} className="fixed top-4 right-6 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-gray-500 rounded-full flex justify-center items-center cursor-pointer">
       <FaGripLines className="cursor-pointer text-white rotate-180" size={28} />
     </div>
     <div className={`fixed right-0 z-50 w-5/6 sm:w-[25%] h-screen top-0 bg-gray-200/60 backdrop-blur-sm ${open ? "translate-x-0 opacity-100 z-10" : "translate-x-96 opacity-0 -z-10"} transition-all`}>

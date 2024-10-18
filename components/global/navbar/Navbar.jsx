@@ -2,6 +2,7 @@ import React from 'react'
 import logo from "@/assets/logo.png";
 import Image from 'next/image'
 import Link from 'next/link';
+import Icon from './Icon';
 
 
 function Navbar() {
@@ -13,7 +14,7 @@ function Navbar() {
       </Link>
     </div>
     <div className="sm:w-24 w-12 h-full flex justify-center items-center">
-    {/* <Icon /> */}
+    <Icon />
 </div>
 </div>
   )

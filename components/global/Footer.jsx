@@ -54,10 +54,10 @@ async function Footer() {
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <h1 className='font-mon font-bold sm:text-4xl text-2xl mb-4 text-Secondary cursor-default'>Connect with us</h1>
             <ul>
-                <a href={`tel:${posts[0].phone}`}>
+                <a href={`tel:${posts[0].contactInformation.phone}`}>
                 <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>{posts[0].contactInformation.phone}</li>
                 </a>
-                <a href={`mailto:${posts[0].email}`}>
+                <a href={`mailto:${posts[0].contactInformation.email}`}>
                 <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>{posts[0].contactInformation.email}</li>
                 </a>
                 {/* <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-primary transition-colors'>zyl5q@example.com</li> */}
