@@ -9,11 +9,18 @@ Command: npx gltfjsx@6.5.2 newModel.glb
 
 import React from 'react'
 import { useGLTF, PerspectiveCamera } from '@react-three/drei'
+import {motion} from "framer-motion-3d"
+import { delay } from 'framer-motion'
 
 export function Model(props) {
   const { nodes, materials } = useGLTF('/newModel.glb')
+  const revealVariant = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1, delay: 1 } },
+  }
+
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} initial="hidden" animate="visible" variants={revealVariant}>
       <PerspectiveCamera makeDefault={true} far={1000} near={0.1} fov={22.895} position={[17.783, 6.429, 16.447]} rotation={[-0.275, 0.829, 0.205]} />
       <pointLight intensity={30} decay={2} position={[-2.409, 7.308, 3.435]} rotation={[-1.069, -0.386, -0.602]} />
       <pointLight intensity={30} decay={2} position={[9.583, 2.244, 0.193]} rotation={[-1.747, 1.431, 1.749]} />

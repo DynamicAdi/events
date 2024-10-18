@@ -66,7 +66,7 @@ function HomePage() {
               </motion.p> 
             </div>
         </div>
-        <div className="sm:h-full sm:w-2/3 w-full h-3/5  flex justify-center  items-center">
+        <div className="sm:h-full sm:w-1/2 w-full h-3/5  flex justify-center  items-center">
             <div className="w-full sm:h-[80%] h-[60%]">
             <Canvas className="w-full h-full">
             <PerspectiveCamera
