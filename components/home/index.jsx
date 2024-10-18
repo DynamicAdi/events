@@ -7,7 +7,7 @@ import GlowBtn from "../global/GlowBtn";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import { Model } from "../../public/NewModel";
+import { Model } from "../../public/Mesh";
 
 
 function HomePage() {
