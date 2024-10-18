@@ -8,6 +8,7 @@ import GlowBtn from "../global/GlowBtn";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Model } from "../../public/Mesh";
+import GlowRadi from "../global/glow";
 
 
 function HomePage() {
@@ -22,9 +23,16 @@ function HomePage() {
         <div className="w-full h-full absolute inset-0 flex sm:flex-row flex-col-reverse justify-between">
         {/* <h1 className="absolute top-1/4 left-2 text-3xl">Random number</h1> */}
         <div className="sm:h-full sm:w-2/5 h-2/5 w-full flex justify-end items-end">
-            <div className="sm:w-full sm:h-[45%] flex flex-col justify-start items-start px-4">
+            <div className="sm:w-full sm:h-[50%] flex flex-col justify-start items-start px-4">
+          <div className="absolute inset-0 -z-10 w-80 h-80">
+            <GlowRadi stop_1={"#ff833b60"} stop_2={"#ff833b00"} />
+          </div>
+          
+          <div className="absolute bottom-2 right-16 -z-10 w-56 h-56">
+            <GlowRadi stop_1={"#195bff60"} stop_2={"#195bff00"} />
+          </div>
 
-              <h1 className="sm:text-6xl gap-0 text-3xl font-bold sm:text-left text-center w-full">
+              <h1 className="sm:text-7xl gap-0 text-3xl font-bold sm:text-left text-center w-full">
                 <motion.span
                   initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -66,7 +74,7 @@ function HomePage() {
               </motion.p> 
             </div>
         </div>
-        <div className="sm:h-full sm:w-1/2 w-full h-3/5  flex justify-center  items-center">
+        <div className="sm:h-full sm:w-[55%] w-full h-3/5  flex justify-center  items-center">
             <div className="w-full sm:h-[80%] h-[60%]">
             <Canvas className="w-full h-full">
             <PerspectiveCamera
