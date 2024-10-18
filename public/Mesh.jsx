@@ -67,10 +67,10 @@ export function Model(props) {
       <pointLight intensity={30} decay={2} position={[0.738, 1.65, 2.836]} rotation={[-Math.PI / 2, 0, 0]} />
       <pointLight intensity={30} decay={2} position={[0.859, 1.976, -3.588]} rotation={[-Math.PI / 2, 0, 0]} />
       <pointLight intensity={30} decay={2} position={[1.224, 1.513, 6.939]} rotation={[-Math.PI / 2, 0, 0]} />
-      <pointLight intensity={8} decay={2} position={[2.445, 4.889, -4.355]} rotation={[1.518, 1.357, -1.517]} />
-      <pointLight intensity={8} decay={2} position={[2.44, 4.889, -2.243]} rotation={[1.828, 1.327, -1.836]} />
-      <pointLight intensity={8} decay={2} position={[2.432, 4.889, 0.174]} rotation={[1.365, 1.329, -1.359]} />
-      <pointLight intensity={8} decay={2} position={[2.808, 4.828, 2.149]} rotation={[1.802, 1.217, -1.817]} />
+      <pointLight intensity={5} color={"orange"} decay={2} position={[2.445, 4.889, -4.355]} rotation={[1.518, 1.357, -1.517]} />
+      <pointLight intensity={5} color={"orange"} decay={2} position={[2.44, 4.889, -2.243]} rotation={[1.828, 1.327, -1.836]} />
+      <pointLight intensity={5} color={"orange"} decay={2} position={[2.432, 4.889, 0.174]} rotation={[1.365, 1.329, -1.359]} />
+      <pointLight intensity={5} color={"orange"} decay={2} position={[2.808, 4.828, 2.149]} rotation={[1.802, 1.217, -1.817]} />
       <pointLight intensity={30} decay={2} position={[7.983, 1.252, 0.637]} rotation={[-1.312, 1.508, 1.312]} />
       <pointLight intensity={150} decay={2} position={[-9.093, 3.14, -0.462]} rotation={[-1.737, -1.339, -1.742]} />
       <pointLight intensity={30} decay={2} position={[1.921, -3.508, -0.294]} rotation={[1.754, 0.74, -1.839]} />
@@ -88,7 +88,7 @@ export function Model(props) {
       geometry={nodes.Cube001.geometry} material={materials.glow} />
       <motion.mesh 
       variants={itemVariants}
-      geometry={nodes.Cube002.geometry} material={nodes.Cube002.material} />
+      geometry={nodes.Cube002.geometry} material={materials.Material} />
       <motion.mesh 
       variants={itemVariants}
       geometry={nodes.Cylinder.geometry} material={materials.darkblue} />
@@ -190,25 +190,25 @@ export function Model(props) {
       geometry={nodes.NurbsPath002.geometry} material={materials.Archmodels70_032_11} />
       <motion.mesh 
       variants={itemVariants}
-      geometry={nodes.Cylinder001.geometry} material={nodes.Cylinder001.Material} />
+      geometry={nodes.Cylinder001.geometry} material={materials['Material.001']} />
       <motion.mesh 
       variants={itemVariants}
       geometry={nodes.NurbsPath003.geometry} material={materials.Archmodels70_032_11} />
       <motion.mesh 
       variants={itemVariants}
-      geometry={nodes.Cylinder002.geometry} material={nodes.Cylinder002.Material} />
+      geometry={nodes.Cylinder002.geometry} material={materials['Material.001']} />
       <motion.mesh 
       variants={itemVariants}
       geometry={nodes.NurbsPath004.geometry} material={materials.Archmodels70_032_11} />
       <motion.mesh 
       variants={itemVariants}
-      geometry={nodes.Cylinder003.geometry} material={materials.Material} />
+      geometry={nodes.Cylinder003.geometry} material={materials['Material.001']} />
       <motion.mesh 
       variants={itemVariants}
       geometry={nodes.NurbsPath005.geometry} material={materials.Archmodels70_032_11} />
       <motion.mesh 
       variants={itemVariants}
-      geometry={nodes.Cylinder004.geometry} material={nodes.Cylinder004.Material} />
+      geometry={nodes.Cylinder004.geometry} material={materials['Material.001']} />
       <motion.mesh 
       variants={itemVariants}
       geometry={nodes.Cube028.geometry} material={nodes.Cube028.material} />
@@ -251,30 +251,26 @@ export function Model(props) {
       <motion.mesh 
       variants={itemVariants}
       geometry={nodes.Cube009_2.geometry} material={materials.logo} />
-      <motion.mesh 
-      variants={itemVariants}
+      <motion.group
+       variants={itemVariants}
+       >
+      <mesh 
       geometry={nodes.Wolf3D_Body003.geometry} material={materials['Wolf3D_Body.009']} />
-      <motion.mesh 
-      variants={itemVariants}
+      <mesh 
       geometry={nodes.Wolf3D_Body003_1.geometry} material={materials['Wolf3D_Eye.009']} />
-      <motion.mesh 
-      variants={itemVariants}
+      <mesh 
       geometry={nodes.Wolf3D_Body003_2.geometry} material={materials['Wolf3D_Skin.009']} />
-      <motion.mesh 
-      variants={itemVariants}
+      <mesh 
       geometry={nodes.Wolf3D_Body003_3.geometry} material={materials['Wolf3D_Teeth.009']} />
-      <motion.mesh 
-      variants={itemVariants}
+      <mesh 
       geometry={nodes.Wolf3D_Body003_4.geometry} material={materials.M_Hair_60} />
-      <motion.mesh 
-      variants={itemVariants}
+      <mesh 
       geometry={nodes.Wolf3D_Body003_5.geometry} material={materials['Wolf3D_Outfit_Bottom.009']} />
-      <motion.mesh 
-      variants={itemVariants}
+      <mesh 
       geometry={nodes.Wolf3D_Body003_6.geometry} material={materials['Wolf3D_Outfit_Footwear.009']} />
-      <motion.mesh 
-      variants={itemVariants}
+      <mesh 
       geometry={nodes.Wolf3D_Body003_7.geometry} material={materials['Wolf3D_Outfit_Top.009']} />
+      </motion.group>
       <motion.mesh 
       variants={itemVariants}
       geometry={nodes.Line342918_1.geometry} material={materials.sfa} />
