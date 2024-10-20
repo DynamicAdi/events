@@ -1,5 +1,5 @@
 import React from 'react'
-import {getPost} from "../../lib/calls.ts"
+import {getPost} from "@/lib/calls.ts"
 import AboutUs from './page.jsx';
 
 async function GetAbout() {
