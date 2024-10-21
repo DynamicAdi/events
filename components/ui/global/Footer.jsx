@@ -1,12 +1,12 @@
 import React from 'react'
 import logo from "@/assets/logo.png";
 import Image from 'next/image';
-import { getPost } from '@/lib/calls';
+import { getData } from '../../../core/page'
 import { urlFor } from '@/lib/image';
 import Link from 'next/link';
 
 async function Footer() {
-    const posts = await getPost('connect');
+    const posts = await getData('connect');
     const tab = [
         {
           name: "Home",

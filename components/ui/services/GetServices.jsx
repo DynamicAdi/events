@@ -1,9 +1,10 @@
 import React from 'react'
 import Services from './page'
-import { getPost } from '@/lib/calls'
+import { getData } from '@/core/page';
 
 async function ServicesApi() {
-    const posts = await getPost('services');
+    const posts = await getData("services");  
+
     return (
     <Services rawData={posts[0].services}/>
   )

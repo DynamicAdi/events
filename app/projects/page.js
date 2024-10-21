@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "../../components/global/navbar/Navbar";
-import { getPost } from "@/lib/calls";
 import BlackCard from "@/components/ui/projects/blackCard";
 import Link from "next/link";
+import { getData } from "../../core/page";
 
 async function page() {
-  const data = await getPost("projects");
+  const data = await getData("projects");
   return (
     <div className="w-full h-auto">
       <Navbar />

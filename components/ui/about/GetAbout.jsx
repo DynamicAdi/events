@@ -1,9 +1,10 @@
 import React from 'react'
-import {getPost} from "@/lib/calls.ts"
+import {getData} from "@/core/page.js"
+
 import AboutUs from './page.jsx';
 
 async function GetAbout() {
-    const posts = await getPost("about");
+    const posts = await getData("about");  
   return (
     <AboutUs data={posts} />
   )

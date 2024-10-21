@@ -1,10 +1,10 @@
 import React from 'react'
 import PastProjects from "./page"
-import { getPost } from '@/lib/calls';
+import { getData } from '@/core/page';
 
 
 async function GetProjects() {
-    const posts = await getPost("projects");
+    const posts = await getData("projects");
     
   return (
     <PastProjects data={posts}/>
