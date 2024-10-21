@@ -5,6 +5,7 @@ import Background from "@/components/ui/global/Background";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
 import Loader from "@/components/global/loader/page";
+import Footer from "@/components/global/Footer";
 
 const HomePage = dynamic(() => import("@/components/ui/home/page"), {
   ssr: false,
@@ -30,9 +31,9 @@ function Main() {
   const scrollRef = useRef(null);
   const {scrollYProgress} = useScroll({ container: scrollRef });
   const homeOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
-  const aboutOpacity = useTransform(scrollYProgress, [0.2, 0.5], [1, 0]);
-  const projectsOpacity = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
-  const servicesOpacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
+  const aboutOpacity = useTransform(scrollYProgress, [0.25, 0.5], [1, 0]);
+  const projectsOpacity = useTransform(scrollYProgress, [0.6, 0.7], [1, 0]);
+  const servicesOpacity = useTransform(scrollYProgress, [0.8, 0.9], [1, 0]);
 
 
   return (
@@ -72,13 +73,16 @@ function Main() {
         </motion.div>
 
         <motion.div
-          className="w-full h-screen pt-28"
+          className="w-full h-screen pt-32"
           
           style={{ position: "sticky", top: 0, height: "100vh"  }}
         >
           <BlogApi />
         </motion.div>
       </div>
+      {/* <div className="absolute bottom-16"> */}
+      <Footer />
+      {/* </div> */}
     </Background>
   );
 }

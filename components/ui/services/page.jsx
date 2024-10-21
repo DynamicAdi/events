@@ -5,8 +5,9 @@ import Title from "../global/Title";
 
 function Services({ rawData }) {
   return (
-    <div className="w-full sm:h-[90%] h-auto relative justify-start items-start flex sm:flex-row flex-col gap-3">
-      
+    <>
+      <Title text={"Services"}/>
+    <div className="w-full sm:h-[75%] h-auto relative justify-start items-start flex sm:flex-row flex-col gap-3" id="services">
       <div className="flex flex-col gap-3 w-auto h-full">
         <div className="sm:w-96 w-full sm:h-[60%] h-[30%] group rounded-2xl relative overflow-hidden cursor-pointer">
           <div className="w-full h-full bg-gradient-to-b transition-all from-transparent to-black/80 absolute inset-0 z-50 translate-y-full group-hover:translate-y-0 ">
@@ -19,7 +20,7 @@ function Services({ rawData }) {
               rawData[0]?.image
                 ? urlFor(rawData[0].image).url()
                 : "https://picsum.photos/900"
-            }
+              }
             alt="representation image"
             className="w-full h-full object-cover group-hover:scale-110 transition-all"
           />
@@ -60,7 +61,7 @@ function Services({ rawData }) {
           />
         </div>
         <div className="flex gap-3 h-full">
-          <div className="sm:w-72 w-full h-[83%] group rounded-2xl relative overflow-hidden cursor-pointer">
+          <div className="sm:w-72 w-full h-[88%] group rounded-2xl relative overflow-hidden cursor-pointer">
             <div className="w-full h-full bg-gradient-to-b transition-all from-transparent to-black/80 absolute inset-0 z-50 translate-y-full group-hover:translate-y-0 ">
               <h1 className="absolute bottom-0 p-4 text-white font-bold text-3xl">
                 {rawData[3]?.title ? rawData[3].title : "Services name"}
@@ -76,7 +77,7 @@ function Services({ rawData }) {
               className="w-full h-full object-cover group-hover:scale-110 transition-all"
             />
           </div>
-          <div className="sm:w-52 w-full h-[83%] group rounded-2xl relative overflow-hidden cursor-pointer">
+          <div className="sm:w-52 w-full h-[88%] group rounded-2xl relative overflow-hidden cursor-pointer">
             <div className="w-full h-full bg-gradient-to-b transition-all from-transparent to-black/80 absolute inset-0 z-50 translate-y-full group-hover:translate-y-0 ">
               <h1 className="absolute bottom-0 p-4 text-white font-bold text-3xl">
                 {rawData[4]?.title ? rawData[4].title : "Services name"}
@@ -124,6 +125,7 @@ function Services({ rawData }) {
         </div>
       </div>
     </div>
+              </>
   );
 }
 6;

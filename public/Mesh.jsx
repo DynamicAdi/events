@@ -9,46 +9,33 @@ import {motion} from "framer-motion-3d"
 import { useFrame } from '@react-three/fiber'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/mesh.glb')
+  const { nodes, materials } = useGLTF('/meshe.glb')
   const [rotation, setRotation] = useState(false);
   const ref = useRef();
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setRotation(false)
-  //   }, 3000);
-  // }, [setRotation, rotation])
-  // useFrame(() => {
-  //   if (rotation) {
-  //     ref.current.rotation.y += 0.015
-  //   }
-  //   if (!rotation) {
-  //     ref.current.rotation.y = 0
-  //   }
-  // })
+
   const containerVariants = {
-    hidden: { opacity: 0, scale: 0 }, // Container starts hidden
+    hidden: { opacity: 0, scale: 0 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        staggerChildren: 0.1, // Stagger children with 0.2 seconds delay
+        staggerChildren: 0.1,
         when: 'beforeChildren',
       },
-    }, // Container becomes visible
+    },
   };
 
-  // Item variants for individual meshes
   const itemVariants = {
-    hidden: { scale: 0, opacity: 0 }, // Each mesh starts hidden and scaled down
+    hidden: { scale: 0, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 1, // Duration of animation for each item
+        duration: 1,
         ease: 'easeInOut',
       },
-    }, // Mesh becomes fully visible and scaled up
+    },
   };
 
   return (
@@ -381,4 +368,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/mesh.glb')
+useGLTF.preload('/meshe.glb')

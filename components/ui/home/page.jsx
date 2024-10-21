@@ -7,7 +7,7 @@ import Render from "./Render"
 function HomeSide() {
   return (
     <div
-    className='w-full h-full flex justify-between flex-col-reverse sm:flex-row'>
+    className='w-full h-full flex justify-between flex-col-reverse sm:flex-row' id='home'>
         <Heading />
         <Render />
     </div>
