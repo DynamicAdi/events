@@ -19,7 +19,7 @@ function PastProjects({data}) {
                 ))
     }
     </div>
-    <p className='w-full text-center mt-0 sm:block hidden z-50'>
+    <p className='w-full text-center mt-0 sm:block hidden relative z-50'>
     <Link href={"/projects"} className='text-xl underline text-white font-mon font-light'>View all</Link>
     </p>
     </div>
