@@ -44,7 +44,7 @@ export function Model(props) {
       scale: 1,
       transition: { duration: 1.5, delay: 1.2}
     }}>
-      <PerspectiveCamera makeDefault={true} far={1000} near={0.1} fov={28} position={[17.783, 6.429, 16.447]} rotation={[-0.275, 0.829, 0.205]} />
+      <PerspectiveCamera makeDefault={true} far={1000} near={0.1} fov={30} position={[17.783, 6.429, 16.447]} rotation={[-0.275, 0.829, 0.205]} />
       <pointLight intensity={150} decay={2} position={[-1.237, 6.406, 1.686]} rotation={[-1.26, -0.102, -0.748]} />
       <pointLight intensity={30} decay={2} position={[4.713, 1.365, 6.442]} rotation={[-0.12, 0.836, 0.089]} />
       <pointLight intensity={30} decay={2} position={[-0.032, 1.791, -9.76]} rotation={[-3.03, 0.183, 3.121]} />

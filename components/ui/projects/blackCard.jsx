@@ -6,7 +6,7 @@ import { urlFor } from '@/lib/image';
 
 function BlackCard({title, description, png}) {
   return (
-    <div className="cursor-pointer group sm:w-80 w-full sm:h-full h-80 relative hover:-translate-y-8 transition-all bg-black/20 backdrop-blur-sm rounded-3xl flex flex-col justify-start items-start p-2">
+    <div className="cursor-pointer group sm:w-80 w-full sm:h-full h-80 relative hover:-translate-y-8 transition-all border-[3px] border-gray-200 bg-gray-200 border-solid rounded-3xl flex flex-col justify-start items-start p-2">
     <div className="h-48 w-full relative">
       <img 
       src={urlFor(png).url()}

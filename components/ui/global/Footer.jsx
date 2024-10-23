@@ -5,50 +5,64 @@ import { getData } from '../../../core/page'
 import { urlFor } from '@/lib/image';
 import Link from 'next/link';
 
-async function Footer() {
+async function Footer({scrollToServices}) {
     const posts = await getData('connect');
-    const tab = [
-        {
-          name: "Home",
-          link: "/",
-        },
-        {
-          name: "About",
-          link: "/about",
-        },
-        {
-          name: "Contact",
-          link: "/contact-us",
-        },
-        {
-          name: "Past Projects",
-          link: "/#projects",
-        },
-        {
-          name: "Blogs",
-          link: "/#blogs",
-        },
-      ]
+    const tabs = [
+      {
+        name: "Home",
+        link: "/",
+        new: true,
+      },
+      {
+        name: "About",
+        link: "/about",
+        new: false,
+      },
+      {
+        name: "Past Projects",
+        link: "/projects",
+        new: false,
+      },
+      {
+        name: "Services",
+        link: "/#services",
+        target: scrollToServices,
+        new: true,
+      },
+      {
+        name: "Blogs",
+        link: "/blogs/all",
+        new: false,
+      },
+      {
+        name: "Contact us",
+        link: "/contact-us",
+        new: false,
+      },
+    ];
   return (
-    <div className='w-full sm:h-96 h-full pr-6 pb-6 mt-12'>
-        <div className="w-full h-full bg-gray-200/40 backdrop-blur-md rounded-3xl flex justify-between items-start flex-col sm:flex-row">
+    <div className='w-full sm:h-96 h-full sm:pb-6 mt-12'>
+        <div className="w-full h-full bg-gray-200/40 overflow-y-auto backdrop-blur-md rounded-3xl flex justify-between items-start flex-col sm:flex-row">
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <div className="w-2/5 h-2/5">
                 <Image src={logo} className='drop-shadow-xl' alt='logo' objectFit='cover' />
             </div>
             <div className="content">
-                <p className='font-mon font-light mt-2 text-sm text-white'>Magnifique Events is your trusted partner for unforgettable event experiences. From seamless travel arrangements to impactful brand collaborations, we specialize in creating memorable moments that elevate your events and leave a lasting impression. Let us make your next event truly magnificent!</p>
+                <p className='font-mon font-light mt-2 text-xs sm:text-sm text-white'>Magnifique Events is your trusted partner for unforgettable event experiences. From seamless travel arrangements to impactful brand collaborations, we specialize in creating memorable moments that elevate your events and leave a lasting impression. Let us make your next event truly magnificent!</p>
             </div>
             </div>
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
-            <ul>
+            <ul className='flex flex-col'>
                 <h1 className='font-mon font-bold sm:text-4xl text-2xl mb-4 text-white cursor-default'>Quick Links</h1>
-                {tab.map((item) => (
-
-            <Link href={item.link} key={item.link}>
-                <li className='font-pop w-fit text-xl mt-2  hover:text-grey-300 text-white hover:translate-x-5 cursor-pointer transition duration-200'>{item.name}</li>
-                </Link>
-                ))}
+                {tabs.map((items, index) => (
+          <Link href={items.link} key={index}
+    className={`cursor-pointer text-xl text-white transition-all hover:scale-110 font-pop font-extralight`}   
+          onClick={() => {items.new && items.target()}}
+          target={items.new ? "" : `_blank`}
+          >
+            {items.name}
+          </Link>
+))}
             </ul>
             </div>
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">

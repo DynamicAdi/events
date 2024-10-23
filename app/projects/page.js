@@ -15,7 +15,6 @@ async function page() {
         >
           All projects
         </h1>
-
         {data.length > 0 && data.map((item) => (
           <Link
             href={`/${item.slug.current}/${item._type}`}
@@ -31,9 +30,6 @@ async function page() {
             />
           </Link>
         ))}
-        {/* <Link href={`/${item.slug.current}/${item._type}`} key={item.slug.current} className='h-full'>
-                  <PastProjectCards key={item._id} title={item.title} image={item.image} png={item.pngimage[0]} description={item.minidesc} />
-                </Link> */}
       </div>
     </div>
   );

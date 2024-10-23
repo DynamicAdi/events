@@ -9,7 +9,7 @@ import Footer from "@/components/ui/global/Footer";
 import SideBar from "./ui/global/Navbar";
 
 const HomePage = dynamic(() => import("@/components/ui/home/page"), {
-  ssr: false,
+  ssr: true,
   loading: () => <Loader />,
 });
 const GetAbout = dynamic(() => import("@/components/ui/about/GetAbout"), {
@@ -36,83 +36,74 @@ function Main() {
   const servicesRef = useRef(null);
   const blogRef = useRef(null);
 
-  const {scrollYProgress} = useScroll({ container: scrollRef });
-  const homeOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+  const { scrollYProgress } = useScroll({ container: scrollRef });
+  const homeOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const aboutOpacity = useTransform(scrollYProgress, [0.25, 0.4], [1, 0]);
   const projectsOpacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
   const servicesOpacity = useTransform(scrollYProgress, [0.7, 0.8], [1, 0]);
   const blogOpacicty = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
 
 
-  const scrollToHome = () => homeRef.current.scrollIntoView({ behavior: "smooth" });
-  const scrollToAbout = () => aboutRef.current.scrollIntoView({ behavior: "smooth" });
-  const scrollToProjects = () => projectsRef.current.scrollIntoView({ behavior: "smooth" });
   const scrollToServices = () => servicesRef.current.scrollIntoView({ behavior: "smooth" });
-  const scrollToBlog = () => blogRef.current.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <Background scrollToTop={scrollToHome}>
-    <SideBar 
-      scrollToHome={scrollToHome}
-      scrollToAbout={scrollToAbout}
-      scrollToProjects={scrollToProjects}
-      scrollToServices={scrollToServices}
-      scrollToBlog={scrollToBlog}
-    />
-      <div
+    <Background>
+      <SideBar
+        scrollToServices={scrollToServices}
+      />
+      <motion.div
         ref={scrollRef}
         style={{ scrollbarWidth: "none" }}
-        className="h-full w-full overflow-y-auto"
+        className="h-full w-full overflow-y-auto overflow-x-hidden"
       >
         <motion.div
-        ref={homeRef}
-          className="w-full h-screen pt-24 sm:sticky top-0 relative"
-          style={{opacity: homeOpacity }}
+          ref={homeRef}
+          className="w-full h-screen sm:sticky top-0 relative"
+          style={{ opacity: homeOpacity }}
         >
           <HomePage />
         </motion.div>
 
         <motion.div
-        ref={aboutRef}
-          className="w-full h-screen pt-28 sm:sticky top-0 relative"
-          style={{opacity: aboutOpacity  }}
+          ref={aboutRef}
+          className="w-full h-screen sm:sticky top-0 relative"
+          style={{ opacity: aboutOpacity }}
         >
           <GetAbout />
         </motion.div>
 
         <motion.div
-        ref={projectsRef}
-          className="w-full h-screen pt-28 sm:sticky relative top-0"
-          style={{ opacity: projectsOpacity  }}
+          ref={projectsRef}
+          className="w-full h-screen sm:sticky relative top-0"
+          style={{ opacity: projectsOpacity }}
         >
           <GetProjects />
         </motion.div>
 
         <motion.div
-        ref={servicesRef}
-          className="w-full sm:h-screen h-auto pt-28 sm:sticky top-0 relative"
-          
-          style={{ opacity: servicesOpacity  }}
+          ref={servicesRef}
+          className="w-full sm:h-screen h-auto sm:sticky top-0 relative"
+          style={{ opacity: servicesOpacity }}
         >
           <ServicesApi />
         </motion.div>
 
         <motion.div
-        ref={blogRef}
-          className="w-full h-screen pt-28"
-          
-          style={{ position: "sticky", top: 0, opacity: blogOpacicty  }}
+          ref={blogRef}
+          className="w-full h-screen"
+          style={{ position: "sticky", top: 0, opacity: blogOpacicty }}
         >
           <BlogApi />
         </motion.div>
-      <motion.div className="w-full h-[40vh] pt-28" style={{position: "sticky", top: 0}}> 
-        <Footer />
+        <motion.div
+          className="w-full sm:h-[40vh] h-full pb-2 sm:pb-0"
+          style={{ position: "sticky", top: 0 }}
+        >
+          <Footer  scrollToServices={scrollToServices}/>
+        </motion.div>
       </motion.div>
-      
-      </div>
     </Background>
   );
 }
-
 
 export default Main;

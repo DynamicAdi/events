@@ -4,43 +4,41 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
+
 function SideBar({
-  scrollToHome,
-  scrollToAbout,
-  scrollToProjects,
-  scrollToServices,
-  scrollToBlog,
+  scrollToServices
 }) {
   const tabs = [
     {
       name: "Home",
       link: "/",
-      target: scrollToHome,
+      new: true,
     },
     {
       name: "About",
       link: "/about",
-      new: true,
+      new: false,
     },
     {
       name: "Past Projects",
-      link: "/#projects",
-      target: scrollToProjects,
+      link: "/projects",
+      new: false,
     },
     {
       name: "Services",
       link: "/#services",
       target: scrollToServices,
+      new: true,
     },
     {
       name: "Blogs",
-      link: "/#blogs",
-      target: scrollToBlog,
+      link: "/blogs/all",
+      new: false,
     },
     {
       name: "Contact us",
       link: "/contact-us",
-      new: true,
+      new: false,
     },
   ];
   const [active, setActive] = useState(tabs[0].name);
@@ -59,24 +57,16 @@ function SideBar({
         >
           {open ? <RxCross2 size={28} /> : <RxHamburgerMenu size={28} />}
         </div>
-        <ul className={`${open ? "opacity-100 z-30 w-full" : "opacity-0 -z-20 w-0 sm:opacity-100 sm:z-50 sm:w-full"} transition-all relative w-full flex justify-end p-6 pr-28 text-white gap-10 flex-col sm:flex-row`}>
+        
+        <ul className={`${open ? "opacity-100 z-30 w-full" : "opacity-0 -z-50 w-0 sm:opacity-100 sm:z-50 sm:w-full"} transition-all relative flex justify-end p-6 pr-28 text-white gap-10 flex-col sm:flex-row`}>
         {tabs.map((items, index) => (
-  <li 
-    key={index} 
-    onClick={() => {
-      setActive(items.name)
-      if (items.target) {
-        items.target();
-      }
-    }}
-    className={`cursor-pointer text-2xl transition-all hover:scale-110 hover:opacity-100 font-pop font-extralight ${active === items.name ? "opacity-100" : "opacity-60"}`}
-  >
-    {items.new ? (
-      <Link href={items.link}>{items.name}</Link>
-    ) : (
-      items.name
-    )}
-  </li>
+          <Link href={items.link} key={index}
+    className={`cursor-pointer text-2xl transition-all hover:scale-110 hover:opacity-100 font-pop font-extralight ${active === items.name ? "opacity-100" : "opacity-60"}`}   
+          onClick={() => {setActive(items.name), items.new && items.target()}}
+          target={items.new ? "" : `_blank`}
+          >
+            {items.name}
+          </Link>
 ))}
 </ul>
       </nav>
