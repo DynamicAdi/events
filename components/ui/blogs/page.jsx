@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function BlogPost({data}) {
   return (
-    <div className="w-full h-full" id="blogs">
+    <div className="w-full h-full mt-6" id="blogs">
       <Title text={"Blogs"} />
     <div className="w-full sm:h-[60%] h-auto mt-6 mb-4 flex items-end justify-center gap-12">
     {

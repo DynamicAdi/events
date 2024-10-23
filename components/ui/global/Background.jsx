@@ -2,13 +2,15 @@ import React from 'react'
 import svg from "@/assets/side.svg"
 import SideBar from "@/components/ui/global/Navbar"
 import {motion} from "framer-motion"
+import Link from 'next/link'
 
-function Background({ children }) {
+function Background({ children, scrollToTop }) {
 
 return (
 <div style={{scrollbarWidth: 'none'}} className="h-[95%] w-[95%] overflow-auto bg-gradient-to-br from-[#00054F] from-20% to-[#5C7FFF] rounded-3xl fixed">
-    <img src={svg.src} className="fixed z-10 sm:top-4 sm:left-9 -top-20 left-0 w-64 h-64 sm:w-auto sm:h-auto" />
-    <SideBar />
+    {/* <Link href={"/"} className='h-full w-full'> */}
+    <img onClick={scrollToTop} src={svg.src} className="cursor-pointer fixed z-[9999px] sm:top-4 sm:left-9 -top-20 left-0 w-64 h-64 sm:w-auto sm:h-auto" />
+    {/* </Link> */}
     <motion.div className={`w-full h-[110%] sm:py-10 sm:pr-4 relative sm:px-6 px-2`}>
   {children}
     </motion.div>

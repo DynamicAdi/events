@@ -1,7 +1,7 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Model } from "@/public/Mesh";
+import { Model } from "@/public/Meshe";
 
 function Render() {
   return (
