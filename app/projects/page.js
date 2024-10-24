@@ -3,7 +3,7 @@ import Navbar from "../../components/global/navbar/Navbar";
 import BlackCard from "@/components/ui/projects/blackCard";
 import Link from "next/link";
 import { getData } from "../../core/page";
-import image from "@/assets/modern.jpg";
+import image from "@/assets/projects.png";
 
 
 async function page() {
@@ -11,7 +11,7 @@ async function page() {
   return (
     <div className="w-full h-auto">
       <Navbar />
-      <div className="w-full sm:h-80 h-40 bg-black my-4">
+      <div className="w-full sm:h-80 h-40 my-4">
         <img src={image.src} alt="dummy image" className="w-full h-full object-cover" />
       </div>
       <div className="mt-10 p-6">
