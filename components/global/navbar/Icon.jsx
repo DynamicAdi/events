@@ -70,30 +70,29 @@ function Icon() {
   return (
     <>
     <div onClick={toggle} className="fixed top-4 right-6 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-gray-500 rounded-full flex justify-center items-center cursor-pointer">
-      <FaGripLines className="cursor-pointer text-white rotate-180" size={28} />
+          {
+            open ? (
+              <FaGripLines className="cursor-pointer text-white rotate-180" size={28} />
+            ) : (
+              <IoCloseOutline color="white" size={28} />
+            )
+          }
     </div>
-    <div className={`fixed right-0 z-50 w-5/6 sm:w-[25%] h-screen top-0 bg-gray-200/60 backdrop-blur-sm ${open ? "translate-x-0 opacity-100 z-10" : "translate-x-96 opacity-0 -z-10"} transition-all`}>
-      
-      <div className="w-full h-20 flex justify-end items-end flex-col gap-4 p-2 px-8">
-        <div onClick={toggle} className="w-12 h-12 rounded-full flex cursor-pointer justify-center items-center bg-gray-700">
-          <IoCloseOutline color="white" size={28} />
-        </div>
-      </div>
-       
-        <div className="w-full h-5/6 mt-4 p-4 pr-6 flex justify-start items-center">
-        <motion.ul
+    <div className={`h-full transition-all ${open ? "opacity-0 w-0" : "w-2/5 opacity-100"} fixed top-0 bg-black/60 backdrop-blur-sm`}>
+            <div className="w-full h-5/6 mt-4 p-4 pr-6 flex justify-start items-center">         
+            <motion.ul
         variants={container}
         initial="hidden"
         whileInView="show"
         >
 {
 tab.map((item, index) => (  
-        <Link href={item.link} key={index}>
+        <Link href={item.link} key={index} className="hover:scale-90 transition-all">
           <motion.li 
           initial="hidden"
           whileInView={"show"}
           variants={items}
-          className="text-3xl hover:text-primary hover:scale-105 hover:font-regular font-normal transition-all cursor-pointer mt-5">{item.name}</motion.li>
+          className="text-3xl text-white font-light cursor-pointer mt-5">{item.name}</motion.li>
         </Link>
 ))
 }
@@ -102,6 +101,16 @@ tab.map((item, index) => (
         </div>
     </div>
     </>
+//     <>
+//     <div className={`fixed right-0 z-50 w-5/6 sm:w-[25%] h-screen top-0 bg-gray-200/60 backdrop-blur-sm ${open ? "translate-x-0 opacity-100 z-10" : "translate-x-96 opacity-0 -z-10"} transition-all`}>
+//       <div className="w-full h-20 flex justify-end items-end flex-col gap-4 p-2 px-8">
+//         <div onClick={toggle} className="w-12 h-12 rounded-full flex cursor-pointer justify-center items-center bg-gray-700">
+//         </div>
+//       </div>
+       
+
+//     </div>
+    // </>
   );
 }
 
