@@ -9,7 +9,7 @@ import Footer from "@/components/ui/global/Footer";
 import SideBar from "./ui/global/Navbar";
 
 const HomePage = dynamic(() => import("@/components/ui/home/page"), {
-  ssr: true,
+  ssr: false,
   loading: () => <Loader />,
 });
 const GetAbout = dynamic(() => import("@/components/ui/about/GetAbout"), {
