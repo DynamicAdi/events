@@ -3,12 +3,17 @@ import Navbar from "../../components/global/navbar/Navbar";
 import BlackCard from "@/components/ui/projects/blackCard";
 import Link from "next/link";
 import { getData } from "../../core/page";
+import image from "@/assets/modern.jpg";
+
 
 async function page() {
   const data = await getData("projects");
   return (
     <div className="w-full h-auto">
       <Navbar />
+      <div className="w-full sm:h-80 h-40 bg-black my-4">
+        <img src={image.src} alt="dummy image" className="w-full h-full object-cover" />
+      </div>
       <div className="mt-10 p-6">
         <h1
           className={`font-pop font-black text-4xl sm:text-6xl px-4 text-black mb-12`}

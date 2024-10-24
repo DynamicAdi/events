@@ -1,17 +1,14 @@
 "use client";
 
-
 import React, { useState } from "react";
-import { FaGripLines } from "react-icons/fa6";
+// import { FaGripLines } from "react-icons/fa6";
+import { MdOutlineSort } from "react-icons/md";
 import { IoCloseOutline } from "react-icons/io5";
-import {motion} from "framer-motion"
 import Link from "next/link";
 
 function Icon() {
-  const [open, setOpen] = useState(false);
-  const toggle = () => {
-    setOpen(!open);
-  }
+  const [open, setOpen] = useState(true);
+
   const tab = [
     {
       name: "Home",
@@ -27,17 +24,17 @@ function Icon() {
     },
     {
       name: "Past Projects",
-      link: "/#projects",
+      link: "/projects",
     },
     {
       name: "Blogs",
-      link: "/#blogs",
+      link: "/blogs",
     },
     {
-        name: "Contact",
-        link: "/contact-us",
-      },
-  ]
+      name: "Contact",
+      link: "/contact-us",
+    },
+  ];
   const container = {
     hidden: {
       opacity: 0,
@@ -48,10 +45,10 @@ function Icon() {
       x: 0,
       transition: {
         duration: 0.5,
-        staggerChildren: 0.4 
-      }
-    }
-  }
+        staggerChildren: 0.4,
+      },
+    },
+  };
 
   const items = {
     hidden: {
@@ -62,55 +59,48 @@ function Icon() {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5
-      }
-    }
-  }
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <>
-    <div onClick={toggle} className="fixed top-4 right-6 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-gray-500 rounded-full flex justify-center items-center cursor-pointer">
-          {
-            open ? (
-              <FaGripLines className="cursor-pointer text-white rotate-180" size={28} />
-            ) : (
-              <IoCloseOutline color="white" size={28} />
-            )
-          }
-    </div>
-    <div className={`h-full transition-all ${open ? "opacity-0 w-0" : "w-2/5 opacity-100"} fixed top-0 bg-black/60 backdrop-blur-sm`}>
-            <div className="w-full h-5/6 mt-4 p-4 pr-6 flex justify-start items-center">         
-            <motion.ul
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        >
-{
-tab.map((item, index) => (  
-        <Link href={item.link} key={index} className="hover:scale-90 transition-all">
-          <motion.li 
-          initial="hidden"
-          whileInView={"show"}
-          variants={items}
-          className="text-3xl text-white font-light cursor-pointer mt-5">{item.name}</motion.li>
-        </Link>
-))
-}
+      <div
+        onClick={() => setOpen(!open)}
+        className="fixed top-4 right-6 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-blue-800 rounded-full flex justify-center items-center cursor-pointer"
+      >
+        {open ? (
+          <MdOutlineSort
+            className="cursor-pointer text-white"
+            size={28}
+          />
+        ) : (
+          <IoCloseOutline color="white" size={28} />
+        )}
+      </div>
 
-        </motion.ul>
+      <div
+        className={`${open ? "h-0 opacity-0 w-0" : "h-full w-2/5 opacity-100"} transition-all fixed top-0 bg-blue-950/60 backdrop-blur-sm`}
+      >
+        <div className="w-full h-5/6 mt-4 p-4 pr-72 flex justify-end text-right items-center">
+          <ul>
+            {tab.map((item, index) => (
+              <Link
+                href={item.link}
+                key={index}
+              >
+                <li
+                  className="hover:-translate-x-8 hover:scale-110 transition-all text-3xl text-white font-light cursor-pointer mt-5"
+                >
+                  {item.name}
+                </li>
+              </Link>
+            ))}
+          </ul>
         </div>
-    </div>
+      </div>
     </>
-//     <>
-//     <div className={`fixed right-0 z-50 w-5/6 sm:w-[25%] h-screen top-0 bg-gray-200/60 backdrop-blur-sm ${open ? "translate-x-0 opacity-100 z-10" : "translate-x-96 opacity-0 -z-10"} transition-all`}>
-//       <div className="w-full h-20 flex justify-end items-end flex-col gap-4 p-2 px-8">
-//         <div onClick={toggle} className="w-12 h-12 rounded-full flex cursor-pointer justify-center items-center bg-gray-700">
-//         </div>
-//       </div>
-       
-
-//     </div>
-    // </>
   );
 }
 

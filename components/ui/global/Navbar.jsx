@@ -32,7 +32,7 @@ function SideBar({
     },
     {
       name: "Blogs",
-      link: "/blogs/all",
+      link: "/blogs",
       new: false,
     },
     {

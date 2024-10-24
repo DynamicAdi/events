@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../../../components/global/navbar/Navbar";
+import Navbar from "../../components/global/navbar/Navbar";
 import BlogPostCard from "./card";
 import Link from "next/link";
-import { getData } from "../../../core/page";
+import { getData } from "../../core/page.js";
 
 async function page() {
   const data = await getData("blogcard");
