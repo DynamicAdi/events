@@ -18,9 +18,8 @@ import Icon from "@/components/global/navbar/Icon";
 function About({data}) {
   return (
     <>
-    <div className="w-screen h-auto mb-4">
       <Navbar />
-      <Icon />
+    <div className="w-screen h-auto mb-4">
       <h1 className="text-center text-5xl font-pop font-bold">
         <span className="text-primary">About</span> us
       </h1>
