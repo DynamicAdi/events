@@ -4,6 +4,7 @@ import BlackCard from "@/components/ui/projects/blackCard";
 import Link from "next/link";
 import { getData } from "../../core/page";
 import image from "@/assets/projects.png";
+import Footer from "@/components/global/Footer";
 
 
 async function page() {
@@ -11,20 +12,20 @@ async function page() {
   return (
     <div className="w-full h-auto">
       <Navbar />
-      <div className="w-full sm:h-80 h-40 my-4">
-        <img src={image.src} alt="dummy image" className="w-full h-full object-cover" />
-      </div>
-      <div className="mt-10 p-6">
-        <h1
-          className={`font-pop font-black text-4xl sm:text-6xl px-4 text-black mb-12`}
+      <div className="w-full sm:h-80 h-40 my-4 relative">
+      <h1
+          className={`absolute z-30 sm:inset-4 inset-0 font-pop font-black text-4xl sm:text-6xl px-4 text-white my-6`}
         >
           All projects
         </h1>
+        <img src={image.src} alt="dummy image" className="w-full h-full object-cover brightness-[65%]" />
+      </div>
+      <div className="mt-10 p-6">
         {data.length > 0 && data.map((item) => (
           <Link
             href={`/${item.slug.current}/${item._type}`}
             key={item.slug.current}
-            className="h-full"
+            className="h-full w-auto"
           >
             <BlackCard
               key={item._id}
@@ -36,6 +37,7 @@ async function page() {
           </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

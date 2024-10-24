@@ -26,7 +26,7 @@ function SideBar({
     },
     {
       name: "Services",
-      link: "/#services",
+      link: "/services",
       target: scrollToServices,
       new: true,
     },
@@ -63,7 +63,6 @@ function SideBar({
           <Link href={items.link} key={index}
     className={`cursor-pointer text-2xl transition-all hover:scale-110 hover:opacity-100 font-pop font-extralight ${active === items.name ? "opacity-100" : "opacity-60"}`}   
           onClick={() => {setActive(items.name), items.new && items.target()}}
-          target={items.new ? "" : `_blank`}
           >
             {items.name}
           </Link>

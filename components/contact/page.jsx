@@ -99,7 +99,7 @@ async function Contact() {
               </div>
             </div>
           </div>
-          <div className="sm:w-10/12 w-[95%] sm:h-full h-auto bg-primary rounded-2xl p-4 text-white relative">
+          <div className="sm:w-10/12 w-[95%] sm:h-full h-auto bg-gradient-to-br from-[#00054F] from-20% to-[#5C7FFF] rounded-2xl p-4 text-white relative">
             <h1 className="font-dm font-semibold text-5xl">Got Queries?</h1>
             <h1 className="font-mon font-light mt-1 text-xl">
               No problem, we would love to help!
@@ -110,7 +110,7 @@ async function Contact() {
                 name="name"
                 onChange={(e) => handleChange(e)}
                 required
-                placeholder="jhon smith"
+                placeholder="Your name"
                 className="bg-transparent outline-none pb-1 placeholder:text-white/40 placeholder:font-light placeholder:font-mon p-2 border-b-2 border-solid border-white"
                 type="text"
               />
@@ -119,7 +119,7 @@ async function Contact() {
                 name="email"
                 onChange={(e) => handleChange(e)}
                 required
-                placeholder="xyz@gmail.com"
+                placeholder="email@gmail.com"
                 className="bg-transparent outline-none pb-1 placeholder:text-white/40 placeholder:font-light placeholder:font-mon p-2 border-b-2 border-solid border-white sm:ml-6 sm:mt-0 ml-0 mt-6"
                 type="text"
               />
@@ -128,7 +128,7 @@ async function Contact() {
                 name="phone"
                 onChange={(e) => handleChange(e)}
                 required
-                placeholder="+91 908634xxxx"
+                placeholder="Your phone no."
                 className="bg-transparent outline-none pb-1 placeholder:text-white/40 placeholder:font-light placeholder:font-mon p-2 border-b-2 border-solid border-white sm:ml-6 sm:mt-0 ml-0 mt-6"
                 type="text"
               />
@@ -136,7 +136,7 @@ async function Contact() {
               value={formData.message}
               name="message"
               onChange={(e) => handleChange(e)}
-              required placeholder="Tell us about your queries in details" className="resize-none w-full h-[200px] bg-transparent outline-none pb-1 placeholder:text-white/40 placeholder:font-light placeholder:font-mon p-2 border-b-2 border-solid border-white mt-8"></textarea>
+              required placeholder="How can we help you today?" className="resize-none w-full h-[200px] bg-transparent outline-none pb-1 placeholder:text-white/40 placeholder:font-light placeholder:font-mon p-2 border-b-2 border-solid border-white mt-8"></textarea>
               <button onClick={(e) => {handleSend(e)}} className="sm:absolute relative sm:bottom-4 mt-7 sm:mt-0 bg-white text-primary sm:w-[95%] w-full py-3 sm:left-5 rounded-lg text-3xl font-medium hover:scale-95 transition-transform font-mon text-center">Let's Talk!</button>
             </form>
           </div>
