@@ -42,7 +42,7 @@ export function Model(props) {
     }}
     animate={{
       scale: 1,
-      transition: { duration: 1.5, delay: 1.2}
+      transition: { duration: 1.5, delay: 1}
     }}>
       <PerspectiveCamera makeDefault={true} far={1000} near={0.1} fov={30} position={[17.783, 6.429, 16.447]} rotation={[-0.275, 0.829, 0.205]} />
       <pointLight intensity={150} decay={2} position={[-1.237, 6.406, 1.686]} rotation={[-1.26, -0.102, -0.748]} />
