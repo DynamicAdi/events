@@ -11,6 +11,7 @@ import image4 from "@/assets/about4.jpg";
 import image5 from "@/assets/about5.jpg";
 import image6 from "@/assets/about6.jpg";
 import Icon from "@/components/global/navbar/Icon";
+import Banner from "@/components/global/Banner"
 
 
 
@@ -19,7 +20,7 @@ function About({data}) {
   return (
     <>
       <Navbar />
-    <div className="w-screen h-auto mb-4">
+    <div className="w-screen h-auto mb-4 ml-4 sm:ml-0">
       <h1 className="text-center text-5xl font-pop font-bold">
         <span className="text-primary">About</span> us
       </h1>
@@ -52,6 +53,7 @@ function About({data}) {
         </div>
       </div>
     </div>
+    <Banner title={"Want to know more?"} />
     <Footer />
     </>
   );

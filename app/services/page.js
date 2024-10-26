@@ -29,6 +29,7 @@ async function page() {
         {data?.length > 0 &&
           data?.map((item) => (
             <Card
+            key={item.title}
               title={item.title}
               description={
                 item.description ? item.description : "No description provided"

@@ -81,7 +81,7 @@ function Icon() {
       </div>
 
       <div
-        className={`${open ? "h-0 opacity-0 w-0" : "h-full w-1/3 opacity-100"} transition-all fixed top-0 bg-blue-950/60 backdrop-blur-sm`}
+        className={`${open ? "h-0 opacity-0 w-0" : "h-full sm:w-1/3 w-full opacity-100"} transition-all fixed top-0 bg-blue-950/60 backdrop-blur-sm`}
       >
         <div className="w-full h-5/6 mt-4 p-4 pr-56 flex justify-end text-right items-center">
           <ul>
