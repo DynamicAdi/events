@@ -13,7 +13,6 @@ function Banner({ title }) {
       })
       const handleSend = async (e) => {
         e.preventDefault();
-    
         try {
           const response = await fetch('/api/sendemail', {
             method: 'POST',
@@ -34,6 +33,7 @@ function Banner({ title }) {
         }
       }
       const handleChange = (e) => {
+        e.preventDefault();
         setFormData({...formData, [e.target.name]: e.target.value });
       }
     const [overlay, setOverlay] = useState(false);
