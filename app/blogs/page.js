@@ -7,7 +7,7 @@ import { getData } from "../../core/page.js";
 async function page() {
   const data = await getData("blogcard");
   return (
-    <div className="w-full h-auto">
+    <div className="w-full h-auto overflow-x-hidden">
       <Navbar />
       <div className="mt-10 p-6">
         <h1

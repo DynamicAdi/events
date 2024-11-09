@@ -25,13 +25,13 @@ async function Footer({scrollToServices}) {
       },
       {
         name: "Services",
-        link: "/#services",
-        target: scrollToServices,
+        link: "/services",
+        // target: scrollToServices,
         new: true,
       },
       {
         name: "Blogs",
-        link: "/blogs/all",
+        link: "/blogs",
         new: false,
       },
       {

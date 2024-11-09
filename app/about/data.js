@@ -20,11 +20,11 @@ function About({data}) {
   return (
     <>
       <Navbar />
-    <div className="w-screen h-auto mb-4 ml-4 sm:ml-0">
+    <div className="w-screen h-auto mb-4 flex flex-col justify-start items-center ml-4 overflow-x-hidden sm:ml-0">
       <h1 className="text-center text-5xl font-pop font-bold">
         <span className="text-primary">About</span> us
       </h1>
-      <div className="sm:hidden block w-screen h-64 mt-4"><img src={image1.src} className="w-full h-full object-cover" /></div>
+      <div className="sm:hidden block w-[95%] h-64 mt-4"><img src={image1.src} className="w-full h-full object-cover" /></div>
       <div className="w-full h-5/6 mt-4 flex justify-between items-start sm:px-8 px-2">
         <div className="w-full sm:w-1/2 h-full mt-4">
           <p className="font-pop font-normal text-lg text-justify w-[95%]">

@@ -100,7 +100,7 @@ function Banner({ title }) {
       <div className="absolute -top-12 -right-8">
         <GlowRadi stop_1={"#1c6beb50"} stop_2={"#87b5ff00"} />
       </div>
-      <h1 className="text-6xl font-bold bg-gradient-to-br from-blue-500 to-blue-200 text-transparent bg-clip-text pb-4">
+      <h1 className="text-6xl ml-4 sm:ml-0 font-bold bg-gradient-to-br from-blue-500 to-blue-200 text-transparent bg-clip-text pb-4">
         {title}
       </h1>
 

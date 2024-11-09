@@ -13,26 +13,33 @@ function Icon() {
     {
       name: "Home",
       link: "/",
+      new: true,
     },
     {
       name: "About",
       link: "/about",
-    },
-    {
-      name: "Services",
-      link: "/services",
+      new: false,
     },
     {
       name: "Past Projects",
       link: "/projects",
+      new: false,
+    },
+    {
+      name: "Services",
+      link: "/services",
+      // target: scrollToServices,
+      new: true,
     },
     {
       name: "Blogs",
       link: "/blogs",
+      new: false,
     },
     {
-      name: "Contact",
+      name: "Contact us",
       link: "/contact-us",
+      new: false,
     },
   ];
   const container = {
@@ -68,7 +75,7 @@ function Icon() {
     <>
       <div
         onClick={() => setOpen(!open)}
-        className="fixed top-4 right-6 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-blue-800 rounded-full flex justify-center items-center cursor-pointer"
+        className="fixed sm:top-2 sm:right-4 top-3 right-10 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-blue-800 rounded-full flex justify-center items-center cursor-pointer"
       >
         {open ? (
           <MdOutlineSort
@@ -81,9 +88,9 @@ function Icon() {
       </div>
 
       <div
-        className={`${open ? "h-0 opacity-0 w-0" : "h-full sm:w-1/3 w-full opacity-100"} transition-all fixed top-0 bg-blue-950/60 backdrop-blur-sm`}
+        className={`${open ? "h-0 opacity-0 w-0" : "h-full sm:w-1/3 w-[30rem] opacity-100"} transition-all fixed top-0 bg-blue-950/60 backdrop-blur-sm`}
       >
-        <div className="w-full h-5/6 mt-4 p-4 pr-56 flex justify-end text-right items-center">
+        <div className="w-full h-5/6 mt-4 p-4 pr-60 flex justify-end text-right items-center">
           <ul>
             {tab.map((item, index) => (
               <Link

@@ -13,26 +13,6 @@ import GetProjects from "./ui/projects/GetProjects";
 import BlogApi from "./ui/blogs/GetBlogs";
 import ServicesApi from "./ui/services/GetServices";
 
-// const HomeSide = dynamic(() => import("@/components/ui/home/page"), {
-//   ssr: true,
-//   loading: () => <Loader />,
-// });
-// const GetAbout = dynamic(() => import("@/components/ui/about/GetAbout"), {
-//   ssr: true,
-//   loading: () => <Loader />,
-// });
-// const GetProjects = dynamic(
-//   () => import("@/components/ui/projects/GetProjects"),
-//   { ssr: true, loading: () => <Loader /> }
-// );
-// const BlogApi = dynamic(() => import("@/components/ui/blogs/GetBlogs"), {
-//   ssr: true,
-//   loading: () => <Loader />,
-// });
-// const ServicesApi = dynamic(
-//   () => import("@/components/ui/services/GetServices"),
-//   { ssr: true, loading: () => <Loader /> }
-// );
 function Main() {
   const scrollRef = useRef(null);
   const homeRef = useRef(null);

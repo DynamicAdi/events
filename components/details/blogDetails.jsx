@@ -11,12 +11,12 @@ function BlogDetails({ data, more }) {
       <Navbar />
 
       <div className="w-full py-6 flex items-start justify-between relative">
-        <div className="w-3/4 pl-4 px-2 flex flex-col justify-start items-start gap-2">
-          <div className="w-full h-[35rem] rounded-3xl bg-gray-200">
+        <div className="w-full sm:w-3/4 pl-4 px-2 flex flex-col justify-start items-start gap-2">
+          <div className="w-full h-[15rem] sm:h-[30rem] rounded-3xl bg-gray-200">
             <img
               src={urlFor(data[0].mainImage).url()}
               alt={data[0].slug.current}
-              className="w-full h-full rounded-3xl"
+              className="w-full h-full rounded-3xl object-contain"
             />
           </div>
 
@@ -39,7 +39,7 @@ function BlogDetails({ data, more }) {
           <RichText blocks={data[0].body} />
         </div>
 
-        <div className="w-1/4 h-full py-0 p-2 pr-6 sticky top-0 flex flex-col gap-3">
+        <div className="w-1/4 h-full py-0 p-2 pr-6 sticky top-0 hidden sm:flex flex-col gap-3">
           <h1 className="font-mon font-bold text-4xl bg-gradient-to-br from-blue-900 to-blue-300 text-transparent bg-clip-text">
             Read other blogs
           </h1>

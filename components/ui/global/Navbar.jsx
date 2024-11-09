@@ -52,7 +52,7 @@ function SideBar({
     >
       <nav className="w-full h-20 relative">
         <div
-          className="cursor-pointer sm:hidden w-10 h-10 bg-white/40 transition-all backdrop-blur-sm absolute z-50 sm:right-14 sm:top-4 right-7 top-7 rounded-full flex justify-center items-center text-white"
+          className="cursor-pointer sm:hidden w-10 h-10 bg-white/40 transition-all backdrop-blur-sm absolute z-50 sm:right-14 sm:top-4 right-10 top-10 rounded-full flex justify-center items-center text-white"
           onClick={toggle}
         >
           {open ? <RxCross2 size={28} /> : <RxHamburgerMenu size={28} />}

@@ -8,26 +8,37 @@ import Link from 'next/link';
 async function Footer() {
     const posts = await getPost('connect');
     const tab = [
-        {
-          name: "Home",
-          link: "/",
-        },
-        {
-          name: "About",
-          link: "/about",
-        },
-        {
-          name: "Contact",
-          link: "/contact-us",
-        },
-        {
-          name: "Past Projects",
-          link: "/#projects",
-        },
-        {
-          name: "Blogs",
-          link: "/#blogs",
-        },
+      {
+        name: "Home",
+        link: "/",
+        new: true,
+      },
+      {
+        name: "About",
+        link: "/about",
+        new: false,
+      },
+      {
+        name: "Past Projects",
+        link: "/projects",
+        new: false,
+      },
+      {
+        name: "Services",
+        link: "/services",
+        // target: scrollToServices,
+        new: true,
+      },
+      {
+        name: "Blogs",
+        link: "/blogs",
+        new: false,
+      },
+      {
+        name: "Contact us",
+        link: "/contact-us",
+        new: false,
+      },
       ]
   return (
     <div className='w-full sm:h-96 h-full p-6 sticky top-0'>
