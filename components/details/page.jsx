@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "../global/navbar/Navbar";
-import GlowBtn from "../global/GlowBtn";
 import Footer from "../global/Footer";
-import GlowRadi from "../global/glow";
 import RichText from "@/components/portable/page";
 import { urlFor } from "@/lib/image";
 import Banner from "@/components/global/Banner";
+import Link from "next/link";
 
 // Memoized ThumbnailGallery component
 const ThumbnailGallery = React.memo(({ images, setActiveImage }) => (
@@ -65,6 +64,7 @@ function Details({ data, more }) {
           </h1>
 
           {more.map((item, index) => (
+            <Link href={`/${item.slug.current}/${item._type}`} key={index}>
             <div
               key={index}
               className="cursor-pointer group overflow-hidden relative w-full h-40 rounded-2xl bg-gray-300 flex justify-start items-start gap-4"
@@ -76,8 +76,9 @@ function Details({ data, more }) {
                 src={urlFor(item.image).url()}
                 alt="project"
                 className="w-full h-full object-cover rounded-2xl"
-              />
+                />
             </div>
+                </Link>
           ))}
         </div>
       </div>
