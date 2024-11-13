@@ -10,7 +10,7 @@ function BlackCard({title, description, png}) {
     <div className="h-48 w-full relative">
       <img 
       src={urlFor(png).url()}
-      className="w-full h-full absolute group-hover:-top-16 -top-8 transition-all group-hover:scale-125 rounded-2xl"
+      className="w-full h-full absolute group-hover:-top-16 -top-8 transition-all group-hover:scale-110 rounded-2xl"
       alt="project"
       />
     </div>

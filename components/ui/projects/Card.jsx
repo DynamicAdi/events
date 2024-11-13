@@ -10,7 +10,7 @@ function PastProjectCards({title, description, png, black=false}) {
     <div className="h-1/2 w-full relative">
       <img 
       src={urlFor(png).url()}
-      className="w-full h-full absolute group-hover:-top-16 -top-8 transition-all group-hover:scale-125 rounded-2xl"
+      className="w-full h-full absolute group-hover:-top-10 -top-8 transition-all group-hover:scale-105 rounded-2xl"
       alt="project"
       />
     </div>

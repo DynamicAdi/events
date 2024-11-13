@@ -4,14 +4,36 @@ import React, { useRef } from "react";
 import Background from "@/components/ui/global/Background";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
-import Loader from "@/components/global/loader/page";
-import Footer from "@/components/ui/global/Footer";
-import SideBar from "./ui/global/Navbar";
-import HomeSide from "./ui/home/page";
-import GetAbout from "./ui/about/GetAbout";
-import GetProjects from "./ui/projects/GetProjects";
-import BlogApi from "./ui/blogs/GetBlogs";
-import ServicesApi from "./ui/services/GetServices";
+
+const Footer = dynamic(() => import("@/components/ui/global/Footer"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+const SideBar = dynamic(() => import("./ui/global/Navbar"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+const HomeSide = dynamic(() => import("./ui/home/page"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+const GetAbout = dynamic(() => import("./ui/about/GetAbout"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+const GetProjects = dynamic(() => import("./ui/projects/GetProjects"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+const BlogApi = dynamic(() => import("./ui/blogs/GetBlogs"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+const ServicesApi = dynamic(() => import("./ui/services/GetServices"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
+
 
 function Main() {
   const scrollRef = useRef(null);
@@ -21,6 +43,7 @@ function Main() {
   const servicesRef = useRef(null);
   const blogRef = useRef(null);
 
+  
   const { scrollYProgress } = useScroll({ container: scrollRef });
   const homeOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const aboutOpacity = useTransform(scrollYProgress, [0.25, 0.4], [1, 0]);
