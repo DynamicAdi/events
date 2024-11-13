@@ -16,7 +16,7 @@ function AbousUs({data}) {
           </p>
           <Link href={"/about"} className="absolute -left-[0px] hover:scale-90  translate-y-4 transition-all hover:-translate-x-3">
             {/* <img src={readmore.src} className="w-32 h-32 sm:w-auto sm:h-auto"/> */}
-            <button className="sm:p-4 sm:py-2 p-2 py-1 bg-white rounded-3xl"><span className="sm:text-2xl text-base font-pop font-semibold bg-gradient-to-br from-blue-900 to-blue-600 inline-block text-transparent bg-clip-text">Read more</span></button>
+            <button className="sm:p-4 sm:py-2 p-2 py-1 bg-white rounded-3xl"><span className="sm:text-2xl text-base font-pop font-semibold bg-gradient-to-br from-teal-900 to-teal-600 inline-block text-transparent bg-clip-text">Read more</span></button>
           </Link>
         </div>
       <div className="sm:w-2/5 sm:h-[90%] h-1/2 w-full">

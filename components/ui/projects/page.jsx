@@ -7,7 +7,7 @@ import {GoArrowUpRight} from "react-icons/go";
 
 function PastProjects({data}) {
   return (
-    <div className='w-full h-full' id='projects'>
+    <div className='w-full sm:h-full h-auto' id='projects'>
         <Title text={"Past Projects"}/>
     <div className="w-full sm:h-[60%] h-full flex flex-col sm:flex-row justify-start items-end gap-8 mt-10">
     {

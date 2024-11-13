@@ -42,7 +42,7 @@ async function Footer({scrollToServices}) {
     ];
   return (
     <div className='w-full sm:h-96 h-full sm:pb-6 mt-12'>
-        <div className="w-full h-full bg-gray-200/40 overflow-y-auto backdrop-blur-md rounded-3xl flex justify-between items-start flex-col sm:flex-row">
+        <div className="w-full h-full bg-gray-200/20 overflow-y-auto backdrop-blur-md rounded-3xl flex justify-between items-start flex-col sm:flex-row">
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <div className="w-2/5 h-2/5">
                 <Image src={logo} className='drop-shadow-xl' alt='logo' objectFit='cover' />

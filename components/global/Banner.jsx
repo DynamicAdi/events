@@ -98,13 +98,13 @@ function Banner({ title }) {
       }
 
       <div className="absolute -top-12 -right-8">
-        <GlowRadi stop_1={"#1c6beb50"} stop_2={"#87b5ff00"} />
+        <GlowRadi stop_1={"#ff510050"} stop_2={"#ff944700"} />
       </div>
-      <h1 className="text-6xl ml-4 sm:ml-0 font-bold bg-gradient-to-br from-blue-500 to-blue-200 text-transparent bg-clip-text pb-4">
+      <h1 className="text-6xl ml-4 sm:ml-0 font-bold bg-gradient-to-br from-orange-500 to-orange-200 text-transparent bg-clip-text pb-4">
         {title}
       </h1>
 
-      <button onClick={() => setOverlay(!overlay)} className="bg-blue-600/20 border border-blue-300 border-solid font-light rounded-full px-12 py-2 text-3xl text-blue-400 flex justify-center items-center gap-4 mb-2 hover:scale-90 transition duration-300 hover:bg-gradient-to-br hover:from-blue-400 hover:to-blue-300 hover:text-white">
+      <button onClick={() => setOverlay(!overlay)} className="bg-orange-600/20 border border-orange-300 border-solid font-light rounded-full px-12 py-2 text-3xl text-orange-400 flex justify-center items-center gap-4 mb-2 hover:scale-90 transition duration-300 hover:bg-gradient-to-br hover:from-orange-400 hover:to-orange-300 hover:text-white">
         Let's get in touch
       </button>
     </div>

@@ -4,34 +4,35 @@ import React, { useRef } from "react";
 import Background from "@/components/ui/global/Background";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
+import SmallLoader from "./global/loader/loader";
 
 const Footer = dynamic(() => import("@/components/ui/global/Footer"), {
   ssr: true,
-  loading: () => <div>Loading...</div>,
+  loading: () => <SmallLoader />,
 });
 const SideBar = dynamic(() => import("./ui/global/Navbar"), {
   ssr: true,
-  loading: () => <div>Loading...</div>,
+  loading: () => <SmallLoader />,
 });
 const HomeSide = dynamic(() => import("./ui/home/page"), {
   ssr: true,
-  loading: () => <div>Loading...</div>,
+  loading: () => <SmallLoader />,
 });
 const GetAbout = dynamic(() => import("./ui/about/GetAbout"), {
   ssr: true,
-  loading: () => <div>Loading...</div>,
+  loading: () => <SmallLoader />,
 });
 const GetProjects = dynamic(() => import("./ui/projects/GetProjects"), {
   ssr: true,
-  loading: () => <div>Loading...</div>,
+  loading: () => <SmallLoader />,
 });
 const BlogApi = dynamic(() => import("./ui/blogs/GetBlogs"), {
   ssr: true,
-  loading: () => <div>Loading...</div>,
+  loading: () => <SmallLoader />,
 });
 const ServicesApi = dynamic(() => import("./ui/services/GetServices"), {
   ssr: true,
-  loading: () => <div>Loading...</div>,
+  loading: () => <SmallLoader />,
 });
 
 

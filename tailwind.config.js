@@ -10,9 +10,8 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // grad: "background: radial-gradient(#e66465, #9198e5)",
-        primary: "darkblue",
-        Secondary: "#FFAA46",
+        primary: "#ff5100",
+        secondary: "#ff9447",
       },
       fontFamily: {
         dm: "var(--font-main)",
