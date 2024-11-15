@@ -20,7 +20,7 @@ async function page() {
         </h1>
         <img src={image.src} alt="dummy image" className="w-full h-full object-cover brightness-[65%]" />
       </div>
-      <div className="mt-10 p-6">
+      <div className="mt-10 p-6 flex gap-12 flex-wrap flex-col sm:flex-row">
         {data.length > 0 && data.map((item) => (
           <Link
             href={`/${item.slug.current}/${item._type}`}

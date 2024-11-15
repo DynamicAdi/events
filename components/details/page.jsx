@@ -9,7 +9,7 @@ import Banner from "@/components/global/Banner";
 import Link from "next/link";
 
 // Memoized ThumbnailGallery component
-const ThumbnailGallery = React.memo(({ images, setActiveImage }) => (
+const ThumbnailGallery = ({ images, setActiveImage }) => (
   <div className="w-full h-36 flex justify-start items-center gap-2">
     {images.map((img, i) => (
       <div
@@ -28,7 +28,7 @@ const ThumbnailGallery = React.memo(({ images, setActiveImage }) => (
       </div>
     ))}
   </div>
-));
+);
 
 function Details({ data, more }) {
   const [activeImage, setActiveImage] = useState(data[0].pngimage[0]);

@@ -10,8 +10,10 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#ff5100",
-        secondary: "#ff9447",
+        // primary: "#ff5100",
+        primary: "#3B6066",
+        secondary: "#18b87d",
+        // secondary: "#ff9447",
       },
       fontFamily: {
         dm: "var(--font-main)",
