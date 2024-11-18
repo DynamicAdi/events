@@ -5,36 +5,18 @@ import Background from "@/components/ui/global/Background";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
 import SmallLoader from "./global/loader/loader";
+import Loader from "@/components/global/loader/page";
+import Footer from "@/components/ui/global/Footer";
+import SideBar from "./ui/global/Navbar";
+import GetAbout from "./ui/about/GetAbout";
+import GetProjects from "./ui/projects/GetProjects";
+import BlogApi from "./ui/blogs/GetBlogs";
+import ServicesApi from "./ui/services/GetServices";
 
-const Footer = dynamic(() => import("@/components/ui/global/Footer"), {
-  ssr: true,
-  loading: () => <SmallLoader />,
-});
-const SideBar = dynamic(() => import("./ui/global/Navbar"), {
-  ssr: true,
-  loading: () => <SmallLoader />,
-});
 const HomeSide = dynamic(() => import("./ui/home/page"), {
   ssr: true,
   loading: () => <SmallLoader />,
 });
-const GetAbout = dynamic(() => import("./ui/about/GetAbout"), {
-  ssr: true,
-  loading: () => <SmallLoader />,
-});
-const GetProjects = dynamic(() => import("./ui/projects/GetProjects"), {
-  ssr: true,
-  loading: () => <SmallLoader />,
-});
-const BlogApi = dynamic(() => import("./ui/blogs/GetBlogs"), {
-  ssr: true,
-  loading: () => <SmallLoader />,
-});
-const ServicesApi = dynamic(() => import("./ui/services/GetServices"), {
-  ssr: true,
-  loading: () => <SmallLoader />,
-});
-
 
 function Main() {
   const scrollRef = useRef(null);
