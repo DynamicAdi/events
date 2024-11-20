@@ -11,9 +11,8 @@ export const dynamic = 'force-dynamic';
 export const dynamicParams = true; 
 
 async function page() {
-  const posts = await getData("services");
+  const data = await getData("services");
   const footer = await getData("connect");
-  const data = posts[0]?.services;
   return (
     <div className="w-full h-auto">
       <Navbar />
@@ -35,9 +34,6 @@ async function page() {
             <Card
             key={item.title}
               title={item.title}
-              description={
-                item.description ? item.description : "No description provided"
-              }
               image={`${item.image ? urlFor(item.image)?.url() : ""}`}
             />
           ))}

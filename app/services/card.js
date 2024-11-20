@@ -6,7 +6,7 @@ function Card({title, description, image}) {
     <div className="w-full h-full bg-gradient-to-b transition-all from-transparent to-black/80 absolute inset-0 z-50 translate-y-full group-hover:translate-y-0 rounded-2xl">
       <h1 className="absolute bottom-0 p-4 text-white font-bold text-3xl">
         {title}
-      <p className="text-xs font-light mt-2">{description}</p>
+      {/* <p className="text-xs font-light mt-2">{description}</p> */}
       </h1>
     </div>
     <img
