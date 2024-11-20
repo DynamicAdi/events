@@ -6,10 +6,11 @@ export default async function Slug({params}) {
     const {slug, type} = params
     const posts = await getPost('fullProjects', slug, type);
     const more = await getPost('projects');
+    const footer = await getPost('connect');
     
   return (
     <>
-    <Details data={posts} more={more}/>
+    <Details data={posts} more={more} footer={footer}/>
     </>
   );
 }

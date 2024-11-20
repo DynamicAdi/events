@@ -10,12 +10,10 @@ DESIGNER - ADARSH PANDIT
 
 
 import {createClient} from '@sanity/client'
-import imageUrlBuilder from '@sanity/image-url';
-
 
 export const client = createClient({
     projectId: "i8rpoiwu",
     dataset: "production",
     useCdn: false,
-    apiVersion: '2021-10-21'
+    apiVersion: '2024-11-13'
 })

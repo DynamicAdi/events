@@ -30,7 +30,7 @@ const ThumbnailGallery = ({ images, setActiveImage }) => (
   </div>
 );
 
-function Details({ data, more }) {
+function Details({ data, more, footer }) {
   const [activeImage, setActiveImage] = useState(data[0].pngimage[0]);
 
   return (
@@ -83,7 +83,7 @@ function Details({ data, more }) {
         </div>
       </div>
       <Banner title={"Loved this design?"} />
-      <Footer />
+      <Footer posts={footer}/>
     </div>
   );
 }

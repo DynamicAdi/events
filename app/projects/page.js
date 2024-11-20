@@ -7,6 +7,7 @@ import image from "@/assets/projects.png";
 import Footer from "@/components/global/Footer";
 
 export const dynamic = 'force-dynamic';
+export const dynamicParams = true; 
 
 async function page() {
   const data = await getData("projects");

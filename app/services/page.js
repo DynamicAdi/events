@@ -8,6 +8,7 @@ import Card from "./card.js";
 import { urlFor } from "@/lib/image";
 
 export const dynamic = 'force-dynamic';
+export const dynamicParams = true; 
 
 async function page() {
   const posts = await getData("services");

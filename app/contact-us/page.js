@@ -4,6 +4,7 @@ import Footer from "@/components/global/Footer"
 import { getPost } from "@/lib/calls";
 
 export const dynamic = 'force-dynamic';
+export const dynamicParams = true; 
 
 export default async function ContactUs() {
   const posts = await getPost('connect');

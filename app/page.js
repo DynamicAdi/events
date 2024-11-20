@@ -3,6 +3,7 @@ import ClientRender from "@/components/ClientRender";
 import { getData } from "@/core/page";
 
 export const dynamic = 'force-dynamic';
+export const dynamicParams = true; 
 
 export default async function Main() {
   const about = await getData("about");
