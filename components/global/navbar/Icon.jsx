@@ -75,7 +75,7 @@ function Icon() {
     <>
       <div
         onClick={() => setOpen(!open)}
-        className="fixed sm:top-2 sm:right-4 top-3 right-10 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-blue-800 rounded-full flex justify-center items-center cursor-pointer"
+        className="fixed sm:top-2 sm:right-4 top-3 right-10 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex justify-center items-center cursor-pointer"
       >
         {open ? (
           <MdOutlineSort

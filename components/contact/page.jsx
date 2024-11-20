@@ -62,7 +62,7 @@ async function Contact() {
                 </p>
                 <a
                   href={`mailto:${posts[0].contactInformation.email}`}
-                  className="font-mon font-light text-base text-blue-800"
+                  className="font-mon font-normal text-base text-blue-800"
                 >
                   {posts[0].contactInformation.email}
                 </a>
@@ -72,12 +72,12 @@ async function Contact() {
               <div className="h-full w-auto mt-1 flex justify-start items-start">
                 <IoLocationOutline size={30} />
               </div>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 my-2">
                 <h1 className="font-mon font-bold text-3xl">Visit us</h1>
                 <p className="font-light text-[12px] text-gray-400">
                   Come and say hello to us
                 </p>
-                <p className="font-mon font-light text-base text-black">
+                <p className="font-mon font-normal text-sm text-black">
                 {posts[0].contactInformation.address}
                 </p>
               </div>
@@ -93,14 +93,14 @@ async function Contact() {
                 </p>
                 <a
                   href={`tel:${posts[0].contactInformation.phone}`}
-                  className="font-mon font-light text-base text-blue-800"
+                  className="font-mon font-normal text-base text-blue-800"
                 >
                   {posts[0].contactInformation.phone}
                 </a>
               </div>
             </div>
           </div>
-          <div className="sm:w-10/12 w-[95%] sm:h-full h-auto bg-gradient-to-br from-[#00054F] from-20% to-[#5C7FFF] rounded-2xl p-4 text-white relative">
+          <div className="sm:w-10/12 w-[95%] sm:h-full h-auto bg-gradient-to-br from-[#3B6066] from-20% to-[#7ef1d6] rounded-2xl p-4 text-white relative">
             <h1 className="font-dm font-semibold text-5xl">Got Queries?</h1>
             <h1 className="font-mon font-light mt-1 text-xl">
               No problem, we would love to help!

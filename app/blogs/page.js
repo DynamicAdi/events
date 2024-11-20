@@ -3,6 +3,7 @@ import Navbar from "../../components/global/navbar/Navbar";
 import BlogPostCard from "./card";
 import Link from "next/link";
 import { getData } from "../../core/page.js";
+import Footer from "@/components/global/Footer";
 
 async function page() {
   const data = await getData("blogcard");
@@ -21,6 +22,7 @@ async function page() {
         </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
