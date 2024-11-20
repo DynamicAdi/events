@@ -1,4 +1,3 @@
-// ClientRender.js
 "use client";
 
 import dynamic from "next/dynamic";
@@ -10,7 +9,7 @@ const Main = dynamic(() => import("@/components/Main"), {
   loading: () => <Loader />,
 });
 
-export default function ClientRender() {
+export default function ClientRender({about, services, blogs, projects, footer, socialMedia}) {
   const [launch, setLaunch] = useState(true);
 
   useEffect(() => {
@@ -25,7 +24,7 @@ export default function ClientRender() {
   ) : (
     <Suspense fallback={<Loader />}>
       <div className="relative w-screen h-screen flex justify-center items-center overflow-hidden">
-        <Main />
+        <Main about={about} services={services} blogs={blogs} projects={projects} socialMedia={socialMedia} footer={footer} />
       </div>
     </Suspense>
   );

@@ -7,8 +7,11 @@ import { getData } from "@/core/page";
 import Card from "./card.js";
 import { urlFor } from "@/lib/image";
 
+export const dynamic = 'force-dynamic';
+
 async function page() {
   const posts = await getData("services");
+  const footer = await getData("connect");
   const data = posts[0]?.services;
   return (
     <div className="w-full h-auto">
@@ -34,11 +37,11 @@ async function page() {
               description={
                 item.description ? item.description : "No description provided"
               }
-              image={urlFor(item.image).url()}
+              image={`${item.image ? urlFor(item.image)?.url() : ""}`}
             />
           ))}
       </div>
-      <Footer />
+      <Footer posts={footer}/>
     </div>
   );
 }

@@ -5,8 +5,7 @@ import { getData } from '../../../core/page'
 import { urlFor } from '@/lib/image';
 import Link from 'next/link';
 
-async function Footer({scrollToServices}) {
-    const posts = await getData('connect');
+function Footer({data, social}) {
     const tabs = [
       {
         name: "Home",
@@ -26,7 +25,6 @@ async function Footer({scrollToServices}) {
       {
         name: "Services",
         link: "/services",
-        // target: scrollToServices,
         new: true,
       },
       {
@@ -68,17 +66,17 @@ async function Footer({scrollToServices}) {
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <h1 className='font-mon font-bold sm:text-4xl text-2xl mb-4 text-white cursor-default'>Connect with us</h1>
             <ul>
-                <a href={`tel:${posts[0].contactInformation.phone}`}>
-                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>{posts[0].contactInformation.phone}</li>
+                <a href={`tel:${data.phone}`}>
+                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>{data.phone}</li>
                 </a>
-                <a href={`mailto:${posts[0].contactInformation.email}`}>
-                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>{posts[0].contactInformation.email}</li>
+                <a href={`mailto:${data.email}`}>
+                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>{data.email}</li>
                 </a>
                 {/* <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>zyl5q@example.com</li> */}
-                <li className='sm:text-xl text-base text-white mt-2'>{posts[0].contactInformation.address}</li>
+                <li className='sm:text-xl text-base text-white mt-2'>{data.address}</li>
 
                 <ul className='flex justify-start items-center gap-2 mt-2'>
-                    {posts[0].socialMediaLinks.map((items, index) => (
+                    {social.map((items, index) => (
                         <a href={items.link} target="_blank" rel="noopener noreferrer" key={index}>
                             <li className='w-12 h-12 cursor-pointer hover:scale-110 hover:text-white text-white transition-all rounded-full'><img alt={items.link} src={urlFor(items.icon).url()} className='w-full h-full rounded-full object-cover'/></li>
                         </a>

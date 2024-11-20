@@ -6,16 +6,14 @@ import {
   IoChatbubblesOutline,
   IoLocationOutline,
 } from "react-icons/io5";
-import { getPost } from "@/lib/calls";
 
-async function Contact() {
+function Contact({posts}) {
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
     phone: '',
     message: '',
   })
-  const posts = await getPost('connect');
   const handleSend = async (e) => {
     e.preventDefault();
 

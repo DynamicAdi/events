@@ -5,20 +5,19 @@ import Background from "@/components/ui/global/Background";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
 import SmallLoader from "./global/loader/loader";
-import Loader from "@/components/global/loader/page";
 import Footer from "@/components/ui/global/Footer";
 import SideBar from "./ui/global/Navbar";
-import GetAbout from "./ui/about/GetAbout";
-import GetProjects from "./ui/projects/GetProjects";
-import BlogApi from "./ui/blogs/GetBlogs";
-import ServicesApi from "./ui/services/GetServices";
+import AboutUs from "@/components/ui/about/page";
+import Services from "./ui/services/page";
+import PastProjects from "./ui/projects/page";
+import BlogPost from "./ui/blogs/page";
 
 const HomeSide = dynamic(() => import("./ui/home/page"), {
   ssr: true,
   loading: () => <SmallLoader />,
 });
 
-function Main() {
+function Main({about, services, blogs, projects, socialMedia, footer}) {
   const scrollRef = useRef(null);
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -57,7 +56,7 @@ function Main() {
           className="w-full h-screen sm:sticky top-0 relative"
           style={{ opacity: aboutOpacity }}
         >
-          <GetAbout />
+          <AboutUs data={about} />
         </motion.div>
 
         <motion.div
@@ -65,7 +64,7 @@ function Main() {
           className="w-full h-screen sm:sticky relative top-0"
           style={{ opacity: projectsOpacity }}
         >
-          <GetProjects />
+          <PastProjects data={projects} />
         </motion.div>
 
         <motion.div
@@ -73,7 +72,7 @@ function Main() {
           className="w-full sm:h-screen h-auto sm:sticky top-0 relative"
           style={{ opacity: servicesOpacity }}
         >
-          <ServicesApi />
+          <Services rawData={services} />
         </motion.div>
 
         <motion.div
@@ -81,13 +80,13 @@ function Main() {
           className="w-full h-screen"
           style={{ position: "sticky", top: 0, opacity: blogOpacicty }}
         >
-          <BlogApi />
+          <BlogPost data={blogs} />
         </motion.div>
         <motion.div
           className="w-full sm:h-[40vh] h-full pb-2 sm:pb-0"
           style={{ position: "sticky", top: 0 }}
         >
-          <Footer scrollToServices={scrollToServices} />
+          <Footer data={footer} social={socialMedia} />
         </motion.div>
       </motion.div>
     </Background>

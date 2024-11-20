@@ -1,12 +1,17 @@
 import React from 'react';
 import Contact from '@/components/contact/page';
 import Footer from "@/components/global/Footer"
+import { getPost } from "@/lib/calls";
 
-export default function ContactUs() {
+export const dynamic = 'force-dynamic';
+
+export default async function ContactUs() {
+  const posts = await getPost('connect');
+
   return (
     <>
-    <Contact />
-    <Footer />
+    <Contact posts={posts} />
+    <Footer posts={posts} />
     </>
   );
 }

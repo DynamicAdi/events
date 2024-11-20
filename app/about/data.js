@@ -2,7 +2,6 @@
 
 import Navbar from "@/components/global/navbar/Navbar";
 import React from "react";
-import Footer from "@/components/global/Footer";
 import { urlFor } from "@/lib/image";
 import image1 from "@/assets/about.jpg";
 import image2 from "@/assets/about2.jpg";
@@ -54,7 +53,6 @@ function About({data}) {
       </div>
     </div>
     <Banner title={"Want to know more?"} />
-    <Footer />
     </>
   );
 }

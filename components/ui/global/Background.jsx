@@ -1,6 +1,5 @@
 import React from 'react'
 import svg from "@/assets/side.svg"
-import SideBar from "@/components/ui/global/Navbar"
 import {motion} from "framer-motion"
 import Link from 'next/link'
 

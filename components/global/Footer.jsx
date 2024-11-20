@@ -5,9 +5,9 @@ import { getPost } from '@/lib/calls';
 import { urlFor } from '@/lib/image';
 import Link from 'next/link';
 
-async function Footer() {
-    const posts = await getPost('connect');
-    const tab = [
+function Footer({posts}) {    
+  
+  const tab = [
       {
         name: "Home",
         link: "/",

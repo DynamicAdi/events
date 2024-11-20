@@ -6,9 +6,11 @@ import { getData } from "../../core/page";
 import image from "@/assets/projects.png";
 import Footer from "@/components/global/Footer";
 
+export const dynamic = 'force-dynamic';
 
 async function page() {
   const data = await getData("projects");
+  const footer = await getData("connect");
   return (
     <div className="w-full h-auto">
       <Navbar />
@@ -37,7 +39,7 @@ async function page() {
           </Link>
         ))}
       </div>
-      <Footer />
+      <Footer posts={footer}/>
     </div>
   );
 }

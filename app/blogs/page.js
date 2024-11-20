@@ -5,8 +5,11 @@ import Link from "next/link";
 import { getData } from "../../core/page.js";
 import Footer from "@/components/global/Footer";
 
+export const dynamic = 'force-dynamic';
+
 async function page() {
   const data = await getData("blogcard");
+  const footer = await getData('connect');
   return (
     <div className="w-full h-auto overflow-x-hidden">
       <Navbar />
@@ -22,7 +25,7 @@ async function page() {
         </Link>
         ))}
       </div>
-      <Footer />
+      <Footer posts={footer}/>
     </div>
   );
 }
