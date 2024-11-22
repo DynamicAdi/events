@@ -28,7 +28,7 @@ async function page() {
           className="w-full h-full object-cover brightness-[65%]"
         />
       </div>
-      <div className="w-full h-auto flex justify-start items-start gap-14 px-4">
+      <div className="w-full h-auto flex flex-wrap justify-start items-start gap-14 px-4">
         {data?.length > 0 &&
           data?.map((item) => (
             <Card

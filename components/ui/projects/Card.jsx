@@ -6,7 +6,7 @@ import { urlFor } from '@/lib/image';
 
 function PastProjectCards({title, description, png, black=false}) {
   return (
-    <div className="cursor-pointer group sm:w-80 w-full sm:h-[90%] h-80 relative hover:-translate-y-8 transition-all bg-white/20 backdrop-blur-sm rounded-3xl flex flex-col justify-start items-start p-2">
+    <div className="cursor-pointer group sm:w-80 w-full sm:h-[90%] h-96 relative hover:-translate-y-8 transition-all bg-white/20 backdrop-blur-sm rounded-3xl flex flex-col justify-start items-start p-2">
     <div className="h-1/2 w-full relative">
       <img 
       src={urlFor(png).url()}

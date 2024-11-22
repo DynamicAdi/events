@@ -61,7 +61,7 @@ function Main({about, services, blogs, projects, socialMedia, footer}) {
 
         <motion.div
           ref={projectsRef}
-          className="w-full h-screen sm:sticky relative top-0"
+          className="w-full sm:h-screen h-auto sm:sticky relative top-0"
           style={{ opacity: projectsOpacity }}
         >
           <PastProjects data={projects} />

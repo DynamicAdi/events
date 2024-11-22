@@ -9,7 +9,7 @@ function PastProjects({data}) {
   return (
     <div className='w-full sm:h-full h-auto' id='projects'>
         <Title text={"Past Projects"}/>
-    <div className="w-full sm:h-[60%] h-full flex flex-col sm:flex-row justify-start items-end gap-8 mt-10">
+    <div className="w-full sm:h-[60%] h-auto flex flex-col sm:flex-row justify-start items-end sm:gap-8 gap-20 my-10">
     {
       data.slice(0, 4).map((item) => (
                 
@@ -19,9 +19,6 @@ function PastProjects({data}) {
                 ))
     }
     </div>
-    <p className='w-full text-center mt-0 sm:block hidden relative z-50'>
-    <Link href={"/projects"} className='text-xl underline text-white font-mon font-light'>View all</Link>
-    </p>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import Title from "../global/Title";
 
 function Services({ rawData }) {
   return (
-    <div className="w-full h-[90%]">
+    <div className="w-full sm:h-[90%] h-auto">
       <Title text={"Services"}/>
     <div className="w-full sm:h-[75%] h-auto relative justify-start items-start flex sm:flex-row flex-col gap-3" id="services">
       <div className="flex flex-col gap-3 w-auto h-full">

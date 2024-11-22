@@ -9,11 +9,13 @@ function Card({title, description, image}) {
       {/* <p className="text-xs font-light mt-2">{description}</p> */}
       </h1>
     </div>
+  <div className="w-full h-64 bg-red-500">
     <img
       src={image}
-    alt="representation image"
-    className="w-full h-full object-cover group-hover:scale-110 transition-all"
-    />
+      alt="representation image"
+      className="w-full h-full object-cover group-hover:scale-110 transition-all"
+      />
+      </div>
   </div>
   )
 }
