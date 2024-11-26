@@ -2,15 +2,15 @@ import React from "react";
 import Navbar from "../../components/global/navbar/Navbar";
 import BlogPostCard from "./card";
 import Link from "next/link";
-import { getData } from "../../core/page.js";
 import Footer from "@/components/global/Footer";
+import { getPost } from "../../lib/calls";
 
 export const dynamic = 'force-dynamic';
 export const dynamicParams = true; 
 
 async function page() {
-  const data = await getData("blogcard");
-  const footer = await getData('connect');
+  const data = await getPost("blogcard");
+  const footer = await getPost('connect');
   return (
     <div className="w-full h-auto overflow-x-hidden">
       <Navbar />

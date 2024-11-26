@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from "@/assets/logo.png";
 import Image from 'next/image';
-import { getPost } from '@/lib/calls';
 import { urlFor } from '@/lib/image';
 import Link from 'next/link';
 

@@ -11,7 +11,7 @@
 // export const FullLatest = `*[ _type=="post" && slug.current == $slug ]`;
 
 export const about = `*[ _type=="about"]`
-export const fullPageAbout = `*[ _type=="about"]{mainDescription, ourPartners}`
+export const fullPageAbout = `*[ _type=="about"]{mainDescription, ourPartners, TeamMember}`
 export const contactInfo = `*[ _type=="about"]{contactInformation, socialMediaLinks}`
 
 export const pastProjects = `*[ _type=="mainpost"]`

@@ -1,18 +1,17 @@
 import React from "react";
 import Navbar from "@/components/global/navbar/Navbar";
-import Link from "next/link";
 import image from "@/assets/services.jpg";
 import Footer from "@/components/global/Footer";
-import { getData } from "@/core/page";
 import Card from "./card.js";
 import { urlFor } from "@/lib/image";
+import { getPost } from "@/lib/calls";
 
 export const dynamic = 'force-dynamic';
-export const dynamicParams = true; 
+// export const dynamicParams = true; 
 
 async function page() {
-  const data = await getData("services");
-  const footer = await getData("connect");
+  const data = await getPost("services");
+  const footer = await getPost("connect");
   return (
     <div className="w-full h-auto">
       <Navbar />

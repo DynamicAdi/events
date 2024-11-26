@@ -1,5 +1,5 @@
 import React from 'react'
-import {getPost} from "../../lib/calls";
+import {getPost} from "../../lib/calls.js";
 import About from "./data";
 import Footer from "@/components/global/Footer";
 

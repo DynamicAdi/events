@@ -49,9 +49,37 @@ export const  aboutType = defineType({
                     ],
                 }),
             ],
+            //
             title: 'Social Media Links',
             description: 'Add your social media icons and links here.',
         }),
+        defineField({
+            name: 'TeamMember',
+            type: 'array',
+            of: [
+                defineArrayMember({
+                    type: 'object',
+                    fields: [
+                        defineField({
+                            name: 'icon',
+                            type: 'image',
+                        }),
+                        defineField({
+                            name: 'name',
+                            type:'string',
+                        }),
+                        defineField({
+                            name: 'Position',
+                            type:'string',
+                        }),
+                    ],
+                }),
+            ],
+/////
+title: 'Our Team Members',
+description: 'Our valuable partners are members of our team.'
+        }),
+
         defineField({
             name: 'contactInformation',
             type: 'object',
