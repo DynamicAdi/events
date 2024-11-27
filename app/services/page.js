@@ -11,6 +11,7 @@ export const dynamic = 'force-dynamic';
 
 async function page() {
   const data = await getPost("services");
+  // console.log(data)
   const footer = await getPost("connect");
   return (
     <div className="w-full h-auto">
