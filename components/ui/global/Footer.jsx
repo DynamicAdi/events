@@ -65,8 +65,8 @@ function Footer({data, social}) {
             <div className="sm:w-1/3 w-full h-full p-4 sm:p-8 py-6">
             <h1 className='font-mon font-bold sm:text-4xl text-2xl mb-4 text-white cursor-default'>Connect with us</h1>
             <ul>
-                <a href={`tel:${data.phone}`}>
-                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>{data.phone}</li>
+                <a href={`tel:+919811143056`}>
+                <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>+919811143056</li>
                 </a>
                 <a href={`mailto:${data.email}`}>
                 <li className='sm:text-xl text-base mt-2 underline cursor-pointer hover:text-grey-300 text-white transition-colors'>{data.email}</li>
