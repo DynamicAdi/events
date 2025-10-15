@@ -6,7 +6,7 @@ import { getPost } from "@/lib/calls";
 export const dynamic = 'force-dynamic';
 export const dynamicParams = true; 
 
-export default async function Main() {
+export default function Main() {
   const [about, setAbout] = useState([]);  
   const [services, setServices] = useState([]);
   const [blogs, setBlogs] = useState([]);
