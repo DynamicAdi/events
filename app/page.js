@@ -12,10 +12,10 @@ export default async function Main() {
   const [blogs, setBlogs] = useState([]);
   const [projects, setProjects] = useState([]);
   const [footer, setFooter] = useState([]);
-    const [socialMedia, setSocialMedia] = useState([]);
+  const [socialMedia, setSocialMedia] = useState([]);
 
-  useEffect(() => {
-  const abt = await getPost("about");
+  const getData = async () => {
+      const abt = await getPost("about");
     setAbout(abt)
   const serv = await getPost("services");
     setServices(serv)
@@ -27,6 +27,9 @@ export default async function Main() {
     setFooter(foot)
   const social = about[0].socialMediaLinks;
     setSocialMedia(social)
+  }
+  useEffect(() => {
+    getData()
   }, [])
 
   return (
