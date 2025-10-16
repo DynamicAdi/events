@@ -1,18 +1,39 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/global/navbar/Navbar";
 import image from "@/assets/services.jpg";
 import Footer from "@/components/global/Footer";
 import Card from "./card.js";
 import { urlFor } from "@/lib/image";
 import { getPost } from "@/lib/calls";
+import Loader from "@/components/global/loader/page.jsx";
 
-export const dynamic = 'force-dynamic';
-// export const dynamicParams = true; 
+function Services() {
+  const [data, setData] = useState([]);
+  const [footer, seFooter] = useState([]);
+  const [loader, startLoader] = useState(true);
 
-async function page() {
-  const data = await getPost("services");
-  // console.log(data)
-  const footer = await getPost("connect");
+  const getData = async () => {
+    startLoader(true);
+    const posts = await getPost("services");
+    const foot = await getPost("connect");
+    if (posts) {
+      setData(posts);
+    }
+    if (foot) {
+      seFooter(foot);
+    }
+    startLoader(false);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (loader) {
+    return <Loader />;
+  }
   return (
     <div className="w-full h-auto">
       <Navbar />
@@ -32,15 +53,15 @@ async function page() {
         {data?.length > 0 &&
           data?.map((item) => (
             <Card
-            key={item.title}
+              key={item.title}
               title={item.title}
               image={`${item.image ? urlFor(item.image)?.url() : ""}`}
             />
           ))}
       </div>
-      <Footer posts={footer}/>
+      <Footer posts={footer} />
     </div>
   );
 }
 
-export default page;
+export default Services;
